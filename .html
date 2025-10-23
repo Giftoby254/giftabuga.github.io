@@ -8,169 +8,76 @@
   <title>Gift Abuga | Web Developer Portfolio</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
-    :root {
-      --primary: #4f46e5;
-      --secondary: #7c3aed;
-      --bg: #f9fafb;
-      --text: #333;
-      --white: #fff;
-    }
+:root {
+  --primary: #4f46e5;
+  --secondary: #7c3aed;
+  --bg: #f9fafb;
+  --text: #333;
+  --white: #fff;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
 
-/* Hero Section with real background image */
-header {
-  background: url('https://images.unsplash.com/photo-1522202220652-31e0a3b20656?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-  color: #fff;
-  text-align: center;
-  padding: 10rem 1rem 8rem;
-  position: relative;
+/* Navigation */
+nav {
+  background: rgba(255,255,255,0.95);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-}
-
-header p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
-}
-
-.cta-btn {
-  display: inline-block;
-  background: #fff;
-  color: #4f46e5;
-  padding: 0.8rem 1.8rem;
-  border-radius: 50px;
-  font-weight: 600;
+nav a {
+  color: var(--primary);
   text-decoration: none;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.cta-btn:hover {
-  background: rgba(255,255,255,0.85);
-  color: #7c3aed;
+nav a:hover {
+  color: var(--secondary);
 }
 
-    /* Sections */
-    section {
-      max-width: 1000px;
-      margin: 3rem auto;
-      background: var(--white);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
+/* Hero Section */
+header.hero {
+  background-image: url('https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 
-    h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
+header.hero .hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: cent
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project {
-      background: var(--bg);
-      padding: 1rem;
-      border-radius: 8px;
-      border-left: 5px solid var(--secondary);
-    }
-
-    .project h3 a {
-      color: var(--secondary);
-      text-decoration: none;
-    }
-
-    .project h3 a:hover {
-      text-decoration: underline;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
-
-    ul li::before {
-      content: "✔ ";
-      color: var(--primary);
-      font-weight: bold;
-    }
-
-    blockquote {
-      font-style: italic;
-      color: #555;
-      border-left: 4px solid var(--secondary);
-      padding-left: 1rem;
-      margin: 1rem 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    footer a {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    nav {
-      background: rgba(255,255,255,0.9);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    nav a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: var(--secondary);
-    }
   </style>
 </head>
-<body>
 
+<body>
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -179,11 +86,14 @@ header p {
     <a href="#contact">Contact</a>
   </nav>
 
-  <header id="home">
+  <header id="home" class="hero">
+  <div class="hero-overlay">
     <h1>Gift Abuga</h1>
     <p>Web Developer • Nairobi, Kenya</p>
     <a href="mailto:giftabuga@gmail.com" class="cta-btn">Hire Me</a>
-  </header>
+  </div>
+</header>
+
 
   <section id="about">
     <h2>About Me</h2>
@@ -237,6 +147,7 @@ header p {
 
 </body>
 </html>
+
 
 
 
