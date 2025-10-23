@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -34,16 +34,21 @@
 
     /* NAVIGATION */
     nav {
-      background: rgba(255,255,255,0.95);
+      background: rgba(255, 255, 255, 0.95);
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
       display: flex;
-      justify-content: flex-end;
-      gap: 2rem;
-      padding: 1rem 3rem;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
     }
 
     nav a {
@@ -57,9 +62,25 @@
       color: var(--secondary);
     }
 
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: var(--primary);
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+
     /* HERO SECTION */
     header.hero {
-      background: url('https://images.unsplash.com/photo-1522202220652-31e0a3b20656?auto=format&fit=crop&w=1950&q=100') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1522202220652-31e0a3b20656?auto=format&fit=crop&w=1950&q=100') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
       height: 100vh;
       width: 100%;
       color: #fff;
@@ -68,7 +89,6 @@
       align-items: center;
       text-align: center;
       position: relative;
-      background-attachment: fixed;
     }
 
     header.hero::after {
@@ -250,132 +270,53 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: #fff;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border-radius: 8px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
       header.hero h1 { font-size: 2.4rem; }
       header.hero p { font-size: 1rem; }
       header.hero .cta-btn { padding: 0.8rem 1.5rem; }
-      nav { justify-content: center; padding: 1rem; }
     }
   </style>
 </head>
 
 <body>
+  <!-- Navigation -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#vision">Vision</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#analytics">Analytics</a>
-    <a href="#contact">Contact</a>
+    <div class="logo" style="font-weight:700; color:var(--primary); font-size:1.2rem;">Gift Abuga</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#vision">Vision</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#analytics">Analytics</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <!-- HERO -->
-  <header class="hero" id="home">
-    <div class="hero-content">
-      <h1>Gift Abuga</h1>
-      <p>Web Developer • Building Modern, Responsive & Impactful Websites in Nairobi, Kenya</p>
-      <a href="mailto:giftabuga@gmail.com" class="cta-btn">Hire Me</a>
-    </div>
-  </header>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I’m <strong>Gift Abuga</strong>, a Nairobi-based web developer focused on crafting clean, high-performing websites that empower businesses and individuals to grow online. 
-      I create digital experiences that balance design, performance, and usability.
-    </p>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Featured Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Hotel Website" />
-        <h3><a href="https://www.jambotoursandtravel.com/" target="_blank">Jambo Tours & Travel</a></h3>
-        <p>Built a vibrant and easy-to-navigate tour platform for an emerging travel company in Kenya.</p>
-      </div>
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1590490359683-6590c1c8b1e2?auto=format&fit=crop&w=800&q=80" alt="Property Management" />
-        <h3><a href="https://www.builditkenya.com/" target="_blank">Buildit Kenya</a></h3>
-        <p>Property management and construction website with professional project showcases and a client dashboard.</p>
-      </div>
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Hotel Booking" />
-        <h3><a href="https://www.kenyatours.co.ke/" target="_blank">Kenya Tours</a></h3>
-        <p>Responsive travel booking website designed for an immersive customer journey experience.</p>
-      </div>
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Hospitality" />
-        <h3><a href="https://www.sunafricahotels.com/" target="_blank">Sun Africa Hotels</a></h3>
-        <p>Luxury hotel website featuring real-time room bookings, image galleries, and location details.</p>
-      </div>
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Airline Website" />
-        <h3><a href="https://www.silverstoneair.com/" target="_blank">Silverstone Air</a></h3>
-        <p>Custom airline website with intuitive booking and user-friendly mobile optimization.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- VISION -->
-  <section id="vision">
-    <h2>Vision & Goals</h2>
-    <p>
-      My vision is to help African entrepreneurs and companies thrive online through smart, scalable web solutions. 
-      My goal is to provide each client with a unique digital presence that drives engagement and results.
-    </p>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
-    <h2>What My Clients Say</h2>
-    <div class="testimonials">
-      <div class="testimonial">
-        <p>"Gift redesigned our hotel website, and the new design doubled our online bookings. Excellent work!"</p>
-        <h4>— Jane Muthoni, Hotel Manager</h4>
-      </div>
-      <div class="testimonial">
-        <p>"Working with Gift was seamless. He understood our vision and brought it to life beautifully."</p>
-        <h4>— Alex Juma, Travel Consultant</h4>
-      </div>
-      <div class="testimonial">
-        <p>"He delivered our property website ahead of schedule and optimized it for search engines. Brilliant developer!"</p>
-        <h4>— Brian Otieno, Buildit Kenya</h4>
-      </div>
-    </div>
-  </section>
-
-  <!-- ANALYTICS -->
-  <section id="analytics">
-    <h2>My Web Impact</h2>
-    <div class="analytics">
-      <div>
-        <h3>50+</h3>
-        <p>Websites Developed</p>
-      </div>
-      <div>
-        <h3>98%</h3>
-        <p>Client Retention</p>
-      </div>
-      <div>
-        <h3>20K+</h3>
-        <p>Monthly Visitors on Client Sites</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:giftabuga@gmail.com">giftabuga@gmail.com</a></p>
-    <p>📱 <a href="tel:+254111971411">+254 111 971 411</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 Gift Abuga — Web Developer</p>
-    <p><a href="mailto:giftabuga@gmail.com">giftabuga@gmail.com</a> | <a href="tel:+254111971411">+254 111 971 411</a></p>
-  </footer>
-</body>
-</html>
+  <header class="her
