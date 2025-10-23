@@ -1,11 +1,10 @@
-
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="Gift Abuga - Nairobi-based Web Developer creating modern, responsive websites for Kenyan businesses." />
+  <meta name="description" content="Gift Abuga - Nairobi-based Web Developer creating stunning, functional, and responsive websites for Kenyan businesses." />
   <title>Gift Abuga | Web Developer Portfolio</title>
 
   <style>
@@ -33,7 +32,7 @@
       scroll-behavior: smooth;
     }
 
-    /* Navigation */
+    /* NAVIGATION */
     nav {
       background: rgba(255,255,255,0.95);
       position: fixed;
@@ -60,7 +59,7 @@
 
     /* HERO SECTION */
     header.hero {
-      background: url('https://images.unsplash.com/photo-1522202220652-31e0a3b20656?auto=format&fit=crop&w=2560&q=100') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1522202220652-31e0a3b20656?auto=format&fit=crop&w=1950&q=100') no-repeat center center/cover;
       height: 100vh;
       width: 100%;
       color: #fff;
@@ -77,7 +76,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.55);
       z-index: 1;
     }
 
@@ -123,7 +122,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Sections */
+    /* SECTIONS */
     section {
       max-width: 1000px;
       margin: 5rem auto;
@@ -139,6 +138,11 @@
       text-align: center;
     }
 
+    p {
+      text-align: center;
+    }
+
+    /* PROJECTS */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -150,6 +154,17 @@
       padding: 1rem;
       border-radius: 8px;
       border-left: 5px solid var(--secondary);
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 0.8rem;
     }
 
     .project h3 a {
@@ -161,7 +176,7 @@
       text-decoration: underline;
     }
 
-    /* Testimonials */
+    /* TESTIMONIALS */
     .testimonials {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -186,7 +201,7 @@
       font-weight: 600;
     }
 
-    /* Analytics Section */
+    /* ANALYTICS */
     .analytics {
       display: flex;
       justify-content: space-around;
@@ -214,6 +229,7 @@
       color: var(--text);
     }
 
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -232,9 +248,9 @@
       text-decoration: underline;
     }
 
-    /* Responsive */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      header.hero h1 { font-size: 2.2rem; }
+      header.hero h1 { font-size: 2.4rem; }
       header.hero p { font-size: 1rem; }
       header.hero .cta-btn { padding: 0.8rem 1.5rem; }
       nav { justify-content: center; padding: 1rem; }
@@ -253,94 +269,104 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <header class="hero" id="home">
     <div class="hero-content">
       <h1>Gift Abuga</h1>
-      <p>Web Developer • Crafting Modern, Responsive & Powerful Websites in Nairobi, Kenya</p>
+      <p>Web Developer • Building Modern, Responsive & Impactful Websites in Nairobi, Kenya</p>
       <a href="mailto:giftabuga@gmail.com" class="cta-btn">Hire Me</a>
     </div>
   </header>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I’m <strong>Gift Abuga</strong>, a passionate web developer dedicated to building websites that
-      combine beauty, performance, and purpose. My focus is on delivering
-      results that help Kenyan businesses grow online.
+      I’m <strong>Gift Abuga</strong>, a Nairobi-based web developer focused on crafting clean, high-performing websites that empower businesses and individuals to grow online. 
+      I create digital experiences that balance design, performance, and usability.
     </p>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
     <h2>Featured Projects</h2>
     <div class="projects">
       <div class="project">
-        <h3><a href="https://www.kenyatours.co.ke/" target="_blank">Kenya Tours</a></h3>
-        <p>Travel & safari booking platform designed with a seamless user interface for smooth exploration.</p>
-      </div>
-      <div class="project">
-        <h3><a href="https://www.builditkenya.com/" target="_blank">Buildit Kenya</a></h3>
-        <p>Professional construction & property management website with portfolio and client showcases.</p>
-      </div>
-      <div class="project">
-        <h3><a href="https://www.sunafricahotels.com/" target="_blank">Sun Africa Hotels</a></h3>
-        <p>Elegant hospitality website offering online bookings and beautiful photo galleries for Kenyan resorts.</p>
-      </div>
-      <div class="project">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Hotel Website" />
         <h3><a href="https://www.jambotoursandtravel.com/" target="_blank">Jambo Tours & Travel</a></h3>
-        <p>Tour operator website that simplifies trip planning and travel inquiries.</p>
+        <p>Built a vibrant and easy-to-navigate tour platform for an emerging travel company in Kenya.</p>
       </div>
       <div class="project">
+        <img src="https://images.unsplash.com/photo-1590490359683-6590c1c8b1e2?auto=format&fit=crop&w=800&q=80" alt="Property Management" />
+        <h3><a href="https://www.builditkenya.com/" target="_blank">Buildit Kenya</a></h3>
+        <p>Property management and construction website with professional project showcases and a client dashboard.</p>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Hotel Booking" />
+        <h3><a href="https://www.kenyatours.co.ke/" target="_blank">Kenya Tours</a></h3>
+        <p>Responsive travel booking website designed for an immersive customer journey experience.</p>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Hospitality" />
+        <h3><a href="https://www.sunafricahotels.com/" target="_blank">Sun Africa Hotels</a></h3>
+        <p>Luxury hotel website featuring real-time room bookings, image galleries, and location details.</p>
+      </div>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Airline Website" />
         <h3><a href="https://www.silverstoneair.com/" target="_blank">Silverstone Air</a></h3>
-        <p>Airline website focusing on user experience, mobile responsiveness, and online flight booking.</p>
+        <p>Custom airline website with intuitive booking and user-friendly mobile optimization.</p>
       </div>
     </div>
   </section>
 
+  <!-- VISION -->
   <section id="vision">
     <h2>Vision & Goals</h2>
     <p>
-      My vision is to empower African businesses through innovative and affordable web solutions.
-      I aim to create long-lasting partnerships that help brands grow, thrive, and inspire confidence online.
+      My vision is to help African entrepreneurs and companies thrive online through smart, scalable web solutions. 
+      My goal is to provide each client with a unique digital presence that drives engagement and results.
     </p>
   </section>
 
+  <!-- TESTIMONIALS -->
   <section id="testimonials">
     <h2>What My Clients Say</h2>
     <div class="testimonials">
       <div class="testimonial">
-        <p>"Gift brought our hotel website to life with a modern touch and smooth booking functionality. Highly recommended!"</p>
+        <p>"Gift redesigned our hotel website, and the new design doubled our online bookings. Excellent work!"</p>
         <h4>— Jane Muthoni, Hotel Manager</h4>
       </div>
       <div class="testimonial">
-        <p>"His work on our travel platform exceeded expectations — sleek, fast, and user-friendly!"</p>
-        <h4>— Alex Juma, CEO of Jambo Tours</h4>
+        <p>"Working with Gift was seamless. He understood our vision and brought it to life beautifully."</p>
+        <h4>— Alex Juma, Travel Consultant</h4>
       </div>
       <div class="testimonial">
-        <p>"Professional and detail-oriented. Gift transformed our brand presence with a stunning website."</p>
+        <p>"He delivered our property website ahead of schedule and optimized it for search engines. Brilliant developer!"</p>
         <h4>— Brian Otieno, Buildit Kenya</h4>
       </div>
     </div>
   </section>
 
+  <!-- ANALYTICS -->
   <section id="analytics">
     <h2>My Web Impact</h2>
     <div class="analytics">
       <div>
         <h3>50+</h3>
-        <p>Websites Built</p>
+        <p>Websites Developed</p>
       </div>
       <div>
-        <h3>100%</h3>
-        <p>Client Satisfaction</p>
+        <h3>98%</h3>
+        <p>Client Retention</p>
       </div>
       <div>
-        <h3>10K+</h3>
+        <h3>20K+</h3>
         <p>Monthly Visitors on Client Sites</p>
       </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
     <p>📧 <a href="mailto:giftabuga@gmail.com">giftabuga@gmail.com</a></p>
