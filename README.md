@@ -1,4 +1,5 @@
 
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -60,7 +61,7 @@
     /* HERO SECTION */
     header.hero {
       background: url('https://images.unsplash.com/photo-1522202220652-31e0a3b20656?auto=format&fit=crop&w=2560&q=100') no-repeat center center/cover;
-      min-height: 100vh;
+      height: 100vh;
       width: 100%;
       color: #fff;
       display: flex;
@@ -69,11 +70,6 @@
       text-align: center;
       position: relative;
       background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-      overflow: hidden;
     }
 
     header.hero::after {
@@ -81,7 +77,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.35);
+      background: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
 
@@ -241,6 +237,7 @@
       header.hero h1 { font-size: 2.2rem; }
       header.hero p { font-size: 1rem; }
       header.hero .cta-btn { padding: 0.8rem 1.5rem; }
+      nav { justify-content: center; padding: 1rem; }
     }
   </style>
 </head>
@@ -256,10 +253,11 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- HERO SECTION -->
   <header class="hero" id="home">
     <div class="hero-content">
       <h1>Gift Abuga</h1>
-      <p>Web Developer • Building Fast, Responsive & Stunning Websites from Nairobi, Kenya</p>
+      <p>Web Developer • Crafting Modern, Responsive & Powerful Websites in Nairobi, Kenya</p>
       <a href="mailto:giftabuga@gmail.com" class="cta-btn">Hire Me</a>
     </div>
   </header>
@@ -267,8 +265,9 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I’m <strong>Gift Abuga</strong>, a Nairobi-based web developer dedicated to crafting elegant, functional, and user-friendly digital experiences.
-      I specialize in responsive websites that deliver measurable results for businesses.
+      I’m <strong>Gift Abuga</strong>, a passionate web developer dedicated to building websites that
+      combine beauty, performance, and purpose. My focus is on delivering
+      results that help Kenyan businesses grow online.
     </p>
   </section>
 
@@ -301,8 +300,8 @@
   <section id="vision">
     <h2>Vision & Goals</h2>
     <p>
-      My vision is to empower African businesses through modern, affordable, and effective web solutions.  
-      I aim to help clients grow by combining creativity, data, and technology into seamless experiences.
+      My vision is to empower African businesses through innovative and affordable web solutions.
+      I aim to create long-lasting partnerships that help brands grow, thrive, and inspire confidence online.
     </p>
   </section>
 
