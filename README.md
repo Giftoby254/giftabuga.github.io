@@ -1,10 +1,8 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="Gift Abuga - Nairobi-based Web Developer creating stunning, functional, and responsive websites for Kenyan businesses." />
   <title>Gift Abuga | Web Developer Portfolio</title>
 
   <style>
@@ -43,7 +41,13 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary);
     }
 
     .nav-links {
@@ -80,7 +84,6 @@
     header.hero {
       background: url('https://images.unsplash.com/photo-1522202220652-31e0a3b20656?auto=format&fit=crop&w=1950&q=100') no-repeat center center;
       background-size: cover;
-      background-attachment: fixed;
       height: 100vh;
       width: 100%;
       color: #fff;
@@ -96,7 +99,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
 
@@ -111,13 +114,13 @@
     header.hero h1 {
       font-size: 3.5rem;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 12px rgba(0,0,0,0.5);
+      text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
     }
 
     header.hero p {
       font-size: 1.3rem;
       margin-bottom: 2rem;
-      text-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+      text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
     }
 
     header.hero .cta-btn {
@@ -301,11 +304,9 @@
 <body>
   <!-- Navigation -->
   <nav>
-    <div class="logo" style="font-weight:700; color:var(--primary); font-size:1.2rem;">Gift Abuga</div>
+    <div class="logo">Gift Abuga</div>
     <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
     <div class="nav-links" id="nav-links">
       <a href="#home">Home</a>
@@ -318,5 +319,75 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header class="her
+  <!-- Hero -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <h1>Gift Abuga</h1>
+      <p>Web Developer • Building Modern, Responsive & Impactful Websites in Nairobi, Kenya</p>
+      <a href="mailto:giftabuga@gmail.com" class="cta-btn">Hire Me</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m <strong>Gift Abuga</strong>, a Nairobi-based web developer focused on crafting clean, high-performing websites that empower businesses and individuals to grow online.</p>
+  </section>
+
+  <!-- Vision -->
+  <section id="vision">
+    <h2>Vision & Goals</h2>
+    <p>My vision is to help African entrepreneurs and companies thrive online through smart, scalable web solutions. My goal is to provide each client with a unique digital presence that drives engagement and results.</p>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>What My Clients Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Gift redesigned our hotel website, and the new design doubled our online bookings. Excellent work!"</p>
+        <h4>— Jane Muthoni, Hotel Manager</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Working with Gift was seamless. He understood our vision and brought it to life beautifully."</p>
+        <h4>— Alex Juma, Travel Consultant</h4>
+      </div>
+      <div class="testimonial">
+        <p>"He delivered our property website ahead of schedule and optimized it for search engines. Brilliant developer!"</p>
+        <h4>— Brian Otieno, Buildit Kenya</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Analytics -->
+  <section id="analytics">
+    <h2>My Web Impact</h2>
+    <div class="analytics">
+      <div><h3>50+</h3><p>Websites Developed</p></div>
+      <div><h3>98%</h3><p>Client Retention</p></div>
+      <div><h3>20K+</h3><p>Monthly Visitors on Client Sites</p></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 <a href="mailto:giftabuga@gmail.com">giftabuga@gmail.com</a></p>
+    <p>📱 <a href="tel:+254111971411">+254 111 971 411</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Gift Abuga — Web Developer</p>
+    <p><a href="mailto:giftabuga@gmail.com">giftabuga@gmail.com</a> | <a href="tel:+254111971411">+254 111 971 411</a></p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
