@@ -214,24 +214,31 @@
   </header>
 
   <!-- Projects Section -->
-  <section id="projects">
-    <h2>My Work</h2>
-    <div class="projects">
-      <div class="project">
-        <h3><a href="https://www.magicalkenya.com/" target="_blank">Magical Kenya</a></h3>
-        <p>A travel and tourism website I developed showcasing Kenya’s destinations.</p>
-      </div>
-      <div class="project">
-        <h3><a href="https://www.safarilink.co.ke/" target="_blank">SafariLink</a></h3>
-        <p>A booking platform for Kenyan safaris I designed and built.</p>
-      </div>
-      <div class="project">
-        <h3><a href="https://www.serenahotels.com/" target="_blank">Serena Hotels</a></h3>
-        <p>Hospitality website for Serena Hotels in Kenya, fully responsive and modern.</p>
-      </div>
+<section id="projects">
+  <h2>My Work</h2>
+  <div class="projects">
+    <div class="project">
+      <h3><a href="https://www.afrikanest.com/" target="_blank">Afrikanest</a></h3>
+      <p>A comprehensive property management platform offering automated billing, E-TIMS integration, and tenant communication tools.</p>
     </div>
-  </section>
-
+    <div class="project">
+      <h3><a href="https://www.dala.co.ke/" target="_blank">Dala</a></h3>
+      <p>Designed to streamline rental management with features like lease tracking, payment integration, and real-time reporting.</p>
+    </div>
+    <div class="project">
+      <h3><a href="https://www.marima.co.ke/" target="_blank">Marima</a></h3>
+      <p>Innovative property management system focusing on location-based listings and user-friendly interfaces for property owners and tenants.</p>
+    </div>
+    <div class="project">
+      <h3><a href="https://www.bomahut.com/" target="_blank">Bomahut</a></h3>
+      <p>A platform that simplifies property management with automated payment tracking, receipts, and customizable reports.</p>
+    </div>
+    <div class="project">
+      <h3><a href="https://www.wingurent.com/" target="_blank">WinguRent</a></h3>
+      <p>Provides landlords with tools for rent collection, maintenance tracking, and financial reporting, all in one platform.</p>
+    </div>
+  </div>
+</section>
   <!-- Testimonials Section -->
   <section id="testimonials">
     <h2>Testimonials</h2>
