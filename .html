@@ -35,8 +35,8 @@
     /* Hero Section */
 header {
   position: relative;
-  height: 400px;
-  background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+  height: 500px; /* taller for more impact */
+  background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
   color: var(--white);
   display: flex;
   flex-direction: column;
@@ -44,13 +44,15 @@ header {
   align-items: center;
   text-align: center;
   padding: 0 1rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
 }
 
 header::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  background: rgba(0, 0, 0, 0.6); /* slightly stronger dark overlay */
   z-index: 0;
 }
 
@@ -58,36 +60,37 @@ header h1,
 header p,
 header .cta-btn {
   position: relative;
-  z-index: 1; /* ensure text and button appear above overlay */
+  z-index: 1; /* above overlay */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
 }
 
 header h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 0.5rem;
 }
 
 header p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.8rem;
 }
 
 .cta-btn {
   display: inline-block;
   background: var(--white);
   color: var(--primary);
-  padding: 0.8rem 1.8rem;
+  padding: 1rem 2.5rem;
   border-radius: 50px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
 }
 
 .cta-btn:hover {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.95);
   color: var(--secondary);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.6);
 }
-
-
 
     /* Sections */
     section {
@@ -253,6 +256,7 @@ header p {
 
 </body>
 </html>
+
 
 
 
