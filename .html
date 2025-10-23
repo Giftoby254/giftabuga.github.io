@@ -33,39 +33,61 @@
     }
 
     /* Hero Section */
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: var(--white);
-      text-align: center;
-      padding: 7rem 1rem 6rem;
-      position: relative;
-    }
+    /* Hero Section */
+header {
+  position: relative;
+  height: 400px;
+  background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 0;
+}
 
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
+header h1,
+header p,
+header .cta-btn {
+  position: relative;
+  z-index: 1; /* ensure text and button appear above overlay */
+}
 
-    .cta-btn {
-      display: inline-block;
-      background: var(--white);
-      color: var(--primary);
-      padding: 0.8rem 1.8rem;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
 
-    .cta-btn:hover {
-      background: rgba(255,255,255,0.85);
-      color: var(--secondary);
-    }
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--white);
+  color: var(--primary);
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: rgba(255,255,255,0.85);
+  color: var(--secondary);
+}
+
 
     /* Sections */
     section {
@@ -231,4 +253,5 @@
 
 </body>
 </html>
+
 
