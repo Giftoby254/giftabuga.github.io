@@ -1,7 +1,10 @@
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Gift Abuga - Nairobi-based Web Developer creating beautiful, fast, and responsive websites." />
   <title>Gift Abuga | Web Developer Portfolio</title>
 
   <!-- Google Fonts -->
@@ -11,104 +14,194 @@
     :root {
       --primary: #4f46e5;
       --secondary: #7c3aed;
-      --accent: #ff6363;
       --bg: #f9fafb;
       --text: #333;
       --white: #fff;
     }
 
-    * { box-sizing: border-box; margin:0; padding:0; font-family:'Poppins',sans-serif;}
-    body { background: var(--bg); color: var(--text); scroll-behavior: smooth; line-height: 1.6;}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
 
-    /* Navbar */
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation */
     nav {
       background: rgba(255,255,255,0.95);
-      position: sticky; top:0; z-index:1000;
-      display:flex; justify-content:center; gap:2rem;
-      padding:1rem 0; box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    nav a { text-decoration:none; color: var(--primary); font-weight:500; transition:0.3s;}
-    nav a:hover { color: var(--secondary); }
 
-    /* Hero Section Full-Screen */
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    /* Hero Section */
     header {
-      background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1950&q=80') no-repeat center/cover;
-      height: 100vh; display:flex; flex-direction:column;
-      justify-content:center; align-items:center;
-      text-align:center; position:relative; color: var(--white);
+      background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      color: #fff;
     }
+
     header::before {
-      content: ''; position:absolute; top:0; left:0; width:100%; height:100%;
-      background: rgba(0,0,0,0.5); z-index:0;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
     }
-    header h1, header p, .cta-btn { position: relative; z-index:1;}
-    header h1 { font-size:4rem; margin-bottom:1rem; text-shadow:2px 2px 10px rgba(0,0,0,0.7);}
-    header p { font-size:1.5rem; margin-bottom:2rem; text-shadow:1px 1px 8px rgba(0,0,0,0.7);}
+
+    header h1, header p, .cta-btn {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
     .cta-btn {
-      display:inline-block; background:var(--accent); color:var(--white);
-      padding:1rem 2.5rem; border-radius:50px; font-weight:600; text-decoration:none;
-      font-size:1.1rem; transition:0.3s;
+      display: inline-block;
+      background: #ff6363;
+      color: #fff;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: 0.3s;
     }
-    .cta-btn:hover { background:var(--secondary); }
+
+    .cta-btn:hover {
+      background: #7c3aed;
+    }
 
     /* Sections */
     section {
-      max-width:1000px; margin:3rem auto;
-      padding:2rem; background:var(--white);
-      border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.05);
+      max-width: 1000px;
+      margin: 3rem auto;
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
-    h2 { color:var(--primary); margin-bottom:1rem; text-align:center;}
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
 
     /* Projects */
-    .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem;}
-    .project { border-radius:8px; overflow:hidden; border-left:5px solid var(--secondary); background:var(--bg);}
-    .project img { width:100%; display:block; transition: transform 0.3s; }
-    .project img:hover { transform: scale(1.05); }
-    .project h3 { padding:1rem; color: var(--secondary);}
-    .project p { padding:0 1rem 1rem 1rem;}
-    .project h3 a { text-decoration:none; color:var(--secondary);}
-    .project h3 a:hover { text-decoration:underline;}
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
 
-    /* Skills */
-    .skills { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem;}
-    .skill { background: var(--primary); color:var(--white); padding:0.8rem 1.5rem; border-radius:50px; font-weight:500;}
+    .project {
+      background: var(--bg);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 5px solid var(--secondary);
+    }
+
+    .project h3 a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    .project h3 a:hover {
+      text-decoration: underline;
+    }
 
     /* Testimonials */
-    .testimonial { background: var(--bg); padding:1.5rem; margin-bottom:1rem; border-left:5px solid var(--secondary); border-radius:8px;}
-    .testimonial p { font-style:italic; }
-    .testimonial span { display:block; margin-top:0.5rem; font-weight:600; color:var(--primary);}
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
 
-    /* Contact */
-    .contact-form { display:flex; flex-direction:column; gap:1rem; max-width:500px; margin:auto;}
-    .contact-form input, .contact-form textarea {
-      padding:0.8rem; border-radius:5px; border:1px solid #ccc; font-size:1rem;
+    .testimonial {
+      background: var(--bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border-left: 5px solid var(--primary);
     }
-    .contact-form button {
-      background: var(--primary); color: var(--white); padding:0.8rem 2rem;
-      border:none; border-radius:50px; font-weight:600; cursor:pointer; transition:0.3s;
+
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 1rem;
     }
-    .contact-form button:hover { background: var(--secondary); }
+
+    .testimonial h4 {
+      font-weight: 700;
+      text-align: right;
+      color: var(--secondary);
+    }
 
     /* Footer */
-    footer { text-align:center; padding:2rem 1rem; background: var(--primary); color:var(--white);}
-    footer a { color:var(--white); text-decoration:none; font-weight:bold;}
-    footer a:hover { text-decoration:underline;}
-
-    /* Responsive */
-    @media(max-width:768px){
-      header h1{ font-size:3rem;}
-      header p{ font-size:1.2rem;}
-      .cta-btn{ padding:0.8rem 2rem; font-size:1rem;}
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--primary);
+      color: var(--white);
     }
+
+    footer a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
+
 <body>
 
-  <!-- Navbar -->
   <nav>
     <a href="#home">Home</a>
     <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
     <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -117,73 +210,61 @@
   <header id="home">
     <h1>Gift Abuga</h1>
     <p>Web Developer • Nairobi, Kenya</p>
-    <a href="#contact" class="cta-btn">Hire Me</a>
+    <a href="mailto:giftabuga@gmail.com" class="cta-btn">Hire Me</a>
   </header>
 
   <!-- Projects Section -->
   <section id="projects">
-    <h2>My Projects</h2>
+    <h2>My Work</h2>
     <div class="projects">
       <div class="project">
-        <img src="https://images.unsplash.com/photo-1581091215368-7f3d1efb4d85?auto=format&fit=crop&w=800&q=80" alt="Project 1">
-        <h3><a href="#">Portfolio Website</a></h3>
-        <p>A modern responsive portfolio website built with HTML, CSS, and JS.</p>
+        <h3><a href="https://www.magicalkenya.com/" target="_blank">Magical Kenya</a></h3>
+        <p>A travel and tourism website I developed showcasing Kenya’s destinations.</p>
       </div>
       <div class="project">
-        <img src="https://images.unsplash.com/photo-1581091215368-7f3d1efb4d85?auto=format&fit=crop&w=800&q=80" alt="Project 2">
-        <h3><a href="#">E-commerce Platform</a></h3>
-        <p>A full-stack e-commerce app built with React and Node.js.</p>
+        <h3><a href="https://www.safarilink.co.ke/" target="_blank">SafariLink</a></h3>
+        <p>A booking platform for Kenyan safaris I designed and built.</p>
       </div>
       <div class="project">
-        <img src="https://images.unsplash.com/photo-1581091215368-7f3d1efb4d85?auto=format&fit=crop&w=800&q=80" alt="Project 3">
-        <h3><a href="#">Blog Platform</a></h3>
-        <p>A content management system with modern design and accessibility.</p>
+        <h3><a href="https://www.serenahotels.com/" target="_blank">Serena Hotels</a></h3>
+        <p>Hospitality website for Serena Hotels in Kenya, fully responsive and modern.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>My Skills</h2>
-    <div class="skills">
-      <span class="skill">HTML</span>
-      <span class="skill">CSS</span>
-      <span class="skill">JavaScript</span>
-      <span class="skill">React</span>
-      <span class="skill">Node.js</span>
-      <span class="skill">Git & GitHub</span>
     </div>
   </section>
 
   <!-- Testimonials Section -->
   <section id="testimonials">
     <h2>Testimonials</h2>
-    <div class="testimonial">
-      <p>"Gift built our company website with amazing speed and quality. Highly recommended!"</p>
-      <span>- John Doe, CEO</span>
-    </div>
-    <div class="testimonial">
-      <p>"Professional, creative, and responsive. A pleasure to work with!"</p>
-      <span>- Jane Smith, Startup Founder</span>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Gift created an amazing travel website for us. Very professional and timely."</p>
+        <h4>- Alex Juma</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Our hotel bookings site looks fantastic thanks to Gift’s expertise!"</p>
+        <h4>- Jane Muthoni</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Highly recommended! Gift delivered a responsive and sleek website."</p>
+        <h4>- Peter Otieno</h4>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Me</h2>
-    <form class="contact-form" action="mailto:giftabuga@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <p style="text-align:center;">Interested in working together? Reach out via email:</p>
+    <p style="text-align:center;"><a href="mailto:giftabuga@gmail.com" class="cta-btn">giftabuga@gmail.com</a></p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Gift Abuga | <a href="mailto:giftabuga@gmail.com">Contact Me</a></p>
+    <p>&copy; 2025 Gift Abuga. All Rights Reserved.</p>
+    <p><a href="https://www.linkedin.com/in/gift-abuga/" target="_blank">LinkedIn</a> | <a href="https://github.com/giftabuga" target="_blank">GitHub</a></p>
   </footer>
 
 </body>
 </html>
+
 
