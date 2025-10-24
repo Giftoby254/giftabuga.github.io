@@ -72,7 +72,7 @@
       text-align: center;
       color: var(--primary);
       font-size: 2.2rem;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
     section {
@@ -126,59 +126,6 @@
       color: var(--primary);
     }
 
-    /* ------------------ TESTIMONIALS ------------------ */
-    #testimonials {
-      background: linear-gradient(to right, #00a859, #008c5e);
-      color: white;
-    }
-
-    .testimonial-container {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 10px;
-    }
-
-    .testimonial-card {
-      flex: 0 0 300px;
-      scroll-snap-align: center;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 10px;
-      padding: 25px;
-      backdrop-filter: blur(5px);
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .testimonial-card:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: scale(1.05);
-    }
-
-    .testimonial-card img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      object-fit: cover;
-      position: absolute;
-      top: -30px;
-      left: 20px;
-    }
-
-    .testimonial-text {
-      margin-top: 40px;
-      font-style: italic;
-      font-size: 1rem;
-    }
-
-    .testimonial-name {
-      margin-top: 10px;
-      font-weight: bold;
-      color: var(--accent);
-    }
-
     /* ------------------ PROJECTS / PORTFOLIO ------------------ */
     #projects {
       background: linear-gradient(to bottom right, #f5f7fa, #e4f1ed);
@@ -221,6 +168,60 @@
     .project-content h3 {
       color: var(--primary);
       margin-bottom: 10px;
+    }
+
+    /* ------------------ TESTIMONIALS ------------------ */
+    #testimonials {
+      background: #f9f9f9;
+      color: var(--dark);
+    }
+
+    .testimonial-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      flex: 1 1 300px;
+      max-width: 350px;
+      background: white;
+      border-radius: 12px;
+      padding: 30px 20px 20px 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .testimonial-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+      object-fit: cover;
+      margin-top: -60px;
+      background: white;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin: 20px 0;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .testimonial-name {
+      font-weight: bold;
+      color: var(--primary);
     }
 
     /* ------------------ BLOG ------------------ */
@@ -312,21 +313,33 @@
     .pricing-card h3 {
       color: var(--primary);
       font-size: 1.5rem;
+      margin-bottom: 10px;
     }
 
     .pricing-card p {
       margin: 10px 0;
+      font-size: 0.95rem;
     }
 
     .price {
       font-size: 1.4rem;
       font-weight: bold;
       color: var(--secondary);
+      margin-bottom: 15px;
     }
 
     .highlight {
       background: var(--primary);
       color: white;
+    }
+
+    .highlight .price {
+      color: white;
+    }
+
+    .plan-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
     }
 
     /* ------------------ FOOTER ------------------ */
@@ -344,7 +357,7 @@
     /* ------------------ MEDIA QUERIES ------------------ */
     @media (max-width: 768px) {
       .testimonial-card {
-        flex: 0 0 90%;
+        flex: 1 1 90%;
       }
       h2 {
         font-size: 1.8rem;
@@ -444,18 +457,10 @@
         </div>
       </div>
       <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Inclusive Design" />
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="SEO Tips" />
         <div class="blog-content">
-          <h3>Designing for All Ages</h3>
-          <p>Inclusive UX design ensures usability and joy for every visitor on your website.</p>
-          <a href="#" class="read-more">Read More</a>
-        </div>
-      </div>
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="SEO Kenya" />
-        <div class="blog-content">
-          <h3>Why SEO Matters for Kenyan Brands</h3>
-          <p>Learn how local SEO strategies help Kenyan businesses reach both national and international audiences.</p>
+          <h3>Boost Your SEO in 5 Steps</h3>
+          <p>Learn actionable strategies to increase your website traffic and improve search engine rankings.</p>
           <a href="#" class="read-more">Read More</a>
         </div>
       </div>
@@ -467,27 +472,52 @@
     <h2>Pricing Plans</h2>
     <div class="pricing-container">
       <div class="pricing-card">
+        <div class="plan-icon">🥈</div>
         <h3>Basic</h3>
-        <p class="price">$199</p>
-        <p>Perfect for small projects and startups. Includes basic web design and responsive layout.</p>
+        <div class="price">$199</div>
+        <p>Perfect for small projects or personal websites.</p>
+        <ul>
+          <li>5 Pages</li>
+          <li>Responsive Design</li>
+          <li>Email Support</li>
+        </ul>
+        <a href="#" class="read-more">Choose Plan</a>
       </div>
+
       <div class="pricing-card highlight">
+        <div class="plan-icon">🥇</div>
         <h3>Professional</h3>
-        <p class="price">$499</p>
-        <p>For medium businesses. Includes advanced design, CMS integration, and SEO optimization.</p>
+        <div class="price">$499</div>
+        <p>Most recommended plan for businesses and startups.</p>
+        <ul>
+          <li>15 Pages</li>
+          <li>Custom Design</li>
+          <li>SEO Optimization</li>
+          <li>Priority Support</li>
+        </ul>
+        <a href="#" class="read-more">Choose Plan</a>
       </div>
+
       <div class="pricing-card">
+        <div class="plan-icon">🥉</div>
         <h3>Premium</h3>
-        <p class="price">$999</p>
-        <p>Complete package for large projects with custom features, analytics, and support.</p>
+        <div class="price">$899</div>
+        <p>Advanced plan for e-commerce or large-scale projects.</p>
+        <ul>
+          <li>Unlimited Pages</li>
+          <li>Custom Features</li>
+          <li>SEO & Marketing Tools</li>
+          <li>24/7 Support</li>
+        </ul>
+        <a href="#" class="read-more">Choose Plan</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Gift Abuga | Designed & Developed by Gift Abuga</p>
-    <p><a href="mailto:contact@giftabuga.com">contact@giftabuga.com</a></p>
+    &copy; 2025 Gift Abuga. All Rights Reserved. <br />
+    Designed with ❤️ by Gift Abuga. 
   </footer>
 
 </body>
