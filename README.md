@@ -1,15 +1,16 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gift Abuga | Kenyan Web Developer</title>
+  <title>Gift Abuga | Web Developer from Kenya</title>
   <link rel="icon" href="https://img.icons8.com/color/48/000000/code.png" />
   <style>
     :root {
       --primary: #00a859;
       --secondary: #006b3c;
       --light: #f9f9f9;
-      --dark: #333;
+      --dark: #222;
       --transition: 0.3s ease-in-out;
     }
 
@@ -21,32 +22,34 @@
       scroll-behavior: smooth;
     }
 
-    /* Navigation */
+    /* NAVIGATION */
     nav {
       background: var(--primary);
-      padding: 10px 0;
+      padding: 12px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
     nav ul {
       display: flex;
-      justify-content: center;
       list-style: none;
       margin: 0;
       padding: 0;
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin: 0 20px;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
       transition: var(--transition);
     }
 
@@ -54,137 +57,168 @@
       color: #e0e0e0;
     }
 
-    /* Hero Section */
-    .hero {
-      background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      color: white;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .overlay h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    .overlay p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-    }
-
-    .cta {
-      padding: 12px 24px;
-      background-color: var(--primary);
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: var(--transition);
-    }
-
-    .cta:hover {
-      background-color: var(--secondary);
-    }
-
-    /* Section Styling */
+    /* SECTIONS BASE */
     section {
+      min-height: 100vh;
       padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
     }
 
     h2 {
       color: var(--primary);
       margin-bottom: 20px;
-      text-align: center;
       font-size: 2rem;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Project Section */
-    .project-list a {
-      display: inline-block;
-      margin: 10px 0;
-      padding: 10px 15px;
-      border: 1px solid var(--primary);
-      border-radius: 5px;
-      transition: var(--transition);
-    }
-
-    .project-list a:hover {
-      background-color: var(--primary);
+    /* HERO / HOME SECTION */
+    #home {
+      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      position: relative;
       color: white;
     }
 
-    /* Testimonials */
-    blockquote {
-      background: #fff;
-      padding: 20px;
-      margin: 20px 0;
-      border-left: 5px solid var(--primary);
-      font-style: italic;
+    #home::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 0;
     }
 
-    /* Contact Form */
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-buttons a {
+      display: inline-block;
+      margin: 5px 10px;
+      padding: 12px 25px;
+      background: var(--primary);
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: var(--transition);
+    }
+
+    .cta-buttons a:hover {
+      background: var(--secondary);
+    }
+
+    /* PROJECTS SECTION */
+    #projects {
+      background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      background-attachment: fixed;
+      color: white;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 15px;
+      backdrop-filter: blur(5px);
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.3);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-card h3 {
+      margin: 10px 0;
+      color: #fff;
+    }
+
+    .project-card a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    /* CONTACT SECTION */
+    #contact {
+      background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: white;
+      position: relative;
+    }
+
+    #contact::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .contact-content {
+      position: relative;
+      z-index: 1;
+      background: rgba(0,0,0,0.5);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .contact-content p a {
+      color: #00ff88;
+      text-decoration: none;
+    }
+
     form {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      max-width: 600px;
-      margin: 20px auto;
+      margin-top: 20px;
     }
 
     input, textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
+      padding: 10px;
+      border: none;
       border-radius: 5px;
-      font-size: 1rem;
       width: 100%;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 120px;
+      font-size: 1rem;
     }
 
     button {
-      background-color: var(--primary);
+      background: var(--primary);
       color: white;
-      padding: 12px;
       border: none;
+      padding: 12px;
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
@@ -192,128 +226,94 @@
     }
 
     button:hover {
-      background-color: var(--secondary);
+      background: var(--secondary);
     }
 
-    /* Footer */
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 20px;
       background: var(--primary);
       color: white;
-      font-size: 0.9rem;
+      padding: 20px;
     }
 
-    /* WhatsApp Icon */
-    .whatsapp-icon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-    }
-
-    .whatsapp-icon img {
-      width: 50px;
-      height: 50px;
-      transition: var(--transition);
-    }
-
-    .whatsapp-icon img:hover {
-      transform: scale(1.1);
-    }
-
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .overlay h1 {
+      .hero-content h1 {
         font-size: 2.2rem;
       }
-
-      .overlay p {
+      .hero-content p {
         font-size: 1rem;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- NAVIGATION -->
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <header id="home" class="hero">
-    <div class="overlay">
+  <!-- HOME SECTION -->
+  <section id="home">
+    <div class="hero-content">
       <h1>Gift Abuga</h1>
-      <p>Web Developer • UI/UX Designer • Tech Consultant</p>
-      <a href="#contact" class="cta">Let's Build Something Great</a>
+      <p>Web Developer • UI/UX Designer • Tech Consultant from Kenya</p>
+      <div class="cta-buttons">
+        <a href="#projects">View My Projects</a>
+        <a href="#contact">Hire Me</a>
+      </div>
     </div>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I'm <strong>Gift Abuga</strong>, a passionate web developer based in Kenya. I build responsive, modern websites and optimize digital experiences for businesses across Africa. My goal is to merge design with functionality for impactful online presence.</p>
-    <ul>
-      <li><strong>Languages:</strong> HTML, CSS, JavaScript, PHP</li>
-      <li><strong>Frameworks:</strong> React, Laravel</li>
-      <li><strong>Certifications:</strong> Google UX Design, Meta Frontend</li>
-    </ul>
   </section>
 
+  <!-- PROJECTS SECTION -->
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project-list">
-      <a href="https://touchwild.co.ke/" target="_blank">Touch Wild Tours</a><br>
-      <a href="https://pegatours.co.ke/" target="_blank">Pega Tours Kenya</a><br>
-      <a href="https://www.nyumbazetu.com/" target="_blank">Nyumba Zetu Property</a>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Touch Wild Tours">
+        <h3>Touch Wild Tours</h3>
+        <a href="https://touchwild.co.ke/" target="_blank">Visit Site</a>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Pega Tours Kenya">
+        <h3>Pega Tours Kenya</h3>
+        <a href="https://pegatours.co.ke/" target="_blank">Visit Site</a>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="Nyumba Zetu Property">
+        <h3>Nyumba Zetu Property</h3>
+        <a href="https://www.nyumbazetu.com/" target="_blank">Visit Site</a>
+      </div>
     </div>
   </section>
 
-  <section id="services">
-    <h2>Services</h2>
-    <ul>
-      <li>Website Design & Development</li>
-      <li>UI/UX Consulting</li>
-      <li>SEO Optimization</li>
-      <li>Maintenance & Hosting</li>
-    </ul>
-  </section>
-
-  <section id="testimonials">
-    <h2>Testimonials</h2>
-    <blockquote>“Gift’s work is exceptional. Our site traffic doubled!” – Wanjiku, Tour Operator</blockquote>
-    <blockquote>“Professional, timely, and creative. Highly recommended.” – Kevin, Property Manager</blockquote>
-  </section>
-
+  <!-- CONTACT SECTION -->
   <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:giftabuga@gmail.com">giftabuga@gmail.com</a></p>
-    <p>WhatsApp: <a href="https://wa.me/254111971411?text=Let's%20partner%20on%20a%20project." target="_blank">Chat Now</a></p>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <div class="contact-content">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:giftabuga@gmail.com">giftabuga@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/254111971411" target="_blank">Chat on WhatsApp</a></p>
+
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Gift Abuga. All rights reserved.</p>
   </footer>
 
-  <div class="whatsapp-icon">
-    <a href="https://wa.me/254111971411?text=Let's%20partner%20on%20a%20project." target="_blank">
-      <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="Chat with Gift on WhatsApp" />
-    </a>
-  </div>
 </body>
 </html>
-
