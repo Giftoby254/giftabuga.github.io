@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -77,11 +76,21 @@
 
     section {
       padding: 80px 20px;
+      position: relative;
+    }
+
+    hr.section-divider {
+      border: none;
+      height: 4px;
+      background: var(--primary);
+      width: 80px;
+      margin: 40px auto;
+      border-radius: 2px;
     }
 
     /* ------------------ HERO ------------------ */
     #hero {
-      background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1505238680356-667803448bb6?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
       padding: 120px 20px;
@@ -393,27 +402,28 @@
       <a href="#projects">See My Work</a>
     </div>
   </section>
+  <hr class="section-divider">
 
   <!-- PROJECTS -->
   <section id="projects">
     <h2>My Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1581091012184-9fcd5ff6f0c1?auto=format&fit=crop&w=800&q=80" alt="Project 1" />
+        <img src="https://images.unsplash.com/photo-1590080870790-168b0b6aa9a7?auto=format&fit=crop&w=800&q=80" alt="Project 1" />
         <div class="project-content">
           <h3>EcoStyle Kenya</h3>
           <p>Responsive e-commerce website for sustainable products.</p>
         </div>
       </div>
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1581091012182-9322f97ff1fc?auto=format&fit=crop&w=800&q=80" alt="Project 2" />
+        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=80" alt="Project 2" />
         <div class="project-content">
           <h3>Touch Wild Tours</h3>
           <p>Interactive tour booking platform with stunning visuals.</p>
         </div>
       </div>
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1581091012175-35d1c86f3c4b?auto=format&fit=crop&w=800&q=80" alt="Project 3" />
+        <img src="https://images.unsplash.com/photo-1572276596237-6a1b40b7bb34?auto=format&fit=crop&w=800&q=80" alt="Project 3" />
         <div class="project-content">
           <h3>Nyumba Zetu Property</h3>
           <p>Real estate listing platform with advanced search features.</p>
@@ -421,6 +431,7 @@
       </div>
     </div>
   </section>
+  <hr class="section-divider">
 
   <!-- TESTIMONIALS -->
   <section id="testimonials">
@@ -443,13 +454,14 @@
       </div>
     </div>
   </section>
+  <hr class="section-divider">
 
   <!-- BLOG -->
   <section id="blog">
     <h2>Latest Blog Posts</h2>
     <div class="blog-grid">
       <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Web Trends" />
+        <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443067?auto=format&fit=crop&w=800&q=80" alt="Web Trends" />
         <div class="blog-content">
           <h3>Top Web Design Trends 2025</h3>
           <p>Explore cutting-edge trends shaping digital experiences from AI personalization to motion design.</p>
@@ -457,7 +469,7 @@
         </div>
       </div>
       <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="SEO Tips" />
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80" alt="SEO Tips" />
         <div class="blog-content">
           <h3>Boost Your SEO in 5 Steps</h3>
           <p>Learn actionable strategies to increase your website traffic and improve search engine rankings.</p>
@@ -466,58 +478,43 @@
       </div>
     </div>
   </section>
+  <hr class="section-divider">
 
   <!-- PRICING -->
   <section id="pricing">
     <h2>Pricing Plans</h2>
     <div class="pricing-container">
       <div class="pricing-card">
-        <div class="plan-icon">🥈</div>
+        <div class="plan-icon">💻</div>
         <h3>Basic</h3>
-        <div class="price">$199</div>
-        <p>Perfect for small projects or personal websites.</p>
-        <ul>
-          <li>5 Pages</li>
-          <li>Responsive Design</li>
-          <li>Email Support</li>
-        </ul>
-        <a href="#" class="read-more">Choose Plan</a>
+        <p class="price">$199</p>
+        <p>Simple 1-page website</p>
+        <p>Email support</p>
       </div>
-
       <div class="pricing-card highlight">
-        <div class="plan-icon">🥇</div>
-        <h3>Professional</h3>
-        <div class="price">$499</div>
-        <p>Most recommended plan for businesses and startups.</p>
-        <ul>
-          <li>15 Pages</li>
-          <li>Custom Design</li>
-          <li>SEO Optimization</li>
-          <li>Priority Support</li>
-        </ul>
-        <a href="#" class="read-more">Choose Plan</a>
+        <div class="plan-icon">🌐</div>
+        <h3>Pro</h3>
+        <p class="price">$499</p>
+        <p>Multi-page website</p>
+        <p>Responsive design & SEO</p>
+        <p>Priority support</p>
       </div>
-
       <div class="pricing-card">
-        <div class="plan-icon">🥉</div>
+        <div class="plan-icon">🚀</div>
         <h3>Premium</h3>
-        <div class="price">$899</div>
-        <p>Advanced plan for e-commerce or large-scale projects.</p>
-        <ul>
-          <li>Unlimited Pages</li>
-          <li>Custom Features</li>
-          <li>SEO & Marketing Tools</li>
-          <li>24/7 Support</li>
-        </ul>
-        <a href="#" class="read-more">Choose Plan</a>
+        <p class="price">$999</p>
+        <p>Custom web applications</p>
+        <p>Advanced SEO</p>
+        <p>24/7 Support</p>
       </div>
     </div>
   </section>
+  <hr class="section-divider">
 
   <!-- FOOTER -->
   <footer>
-    &copy; 2025 Gift Abuga. All Rights Reserved. <br />
-    Designed with ❤️ by Gift Abuga. 
+    <p>&copy; 2025 Gift Abuga. All rights reserved.</p>
+    <p>Follow me on <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">GitHub</a></p>
   </footer>
 
 </body>
