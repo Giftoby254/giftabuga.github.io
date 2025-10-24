@@ -403,36 +403,35 @@ footer a {
 
 <hr class="section-divider">
 
-<!-- PROJECTS -->
-<section id="projects">
-<h2>My Projects</h2>
-<div class="projects-grid">
-  <div class="project-card">
-    <img src="https://images.unsplash.com/photo-1590080870790-168b0b6aa9a7?auto=format&fit=crop&w=800&q=80" alt="EcoStyle Kenya">
-    <div class="project-content">
-      <h3>EcoStyle Kenya</h3>
-      <p>Responsive e-commerce website for sustainable products.</p>
-      <a href="https://ecostyle-kenya.com" target="_blank">View Project</a>
+<section id="testimonials">
+  <h2>Client Testimonials</h2>
+  <div class="testimonial-container">
+    <!-- TrippyGO Tours & Travel -->
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/400x200.png?text=TrippyGO+Tours" alt="TrippyGO Tours & Travel">
+      <p class="testimonial-text">"Gift Abuga delivered a dynamic and user-friendly website that perfectly captures our brand's adventurous spirit."</p>
+      <p class="testimonial-name">TrippyGO Tours & Travel</p>
+      <a href="https://trippygotours.com/" target="_blank">View Project</a>
+    </div>
+
+    <!-- Ritz Hospitality -->
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/400x200.png?text=Ritz+Hospitality" alt="Ritz Hospitality">
+      <p class="testimonial-text">"The website created for us is elegant and functional, enhancing our online presence and client engagement."</p>
+      <p class="testimonial-name">Ritz Hospitality</p>
+      <a href="https://ritzhospitality.co.ke/" target="_blank">View Project</a>
+    </div>
+
+    <!-- Iricon Group -->
+    <div class="testimonial-card">
+      <img src="https://via.placeholder.com/400x200.png?text=Iricon+Group" alt="Iricon Group">
+      <p class="testimonial-text">"Our new site reflects our professionalism and expertise, thanks to Gift Abuga's meticulous work."</p>
+      <p class="testimonial-name">Iricon Group</p>
+      <a href="https://iricongroup.co.ke/" target="_blank">View Project</a>
     </div>
   </div>
-  <div class="project-card">
-    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=80" alt="Touch Wild Tours">
-    <div class="project-content">
-      <h3>Touch Wild Tours</h3>
-      <p>Interactive tour booking platform with stunning visuals.</p>
-      <a href="https://touchwildtours.com" target="_blank">View Project</a>
-    </div>
-  </div>
-  <div class="project-card">
-    <img src="https://images.unsplash.com/photo-1572276596237-6a1b40b7bb34?auto=format&fit=crop&w=800&q=80" alt="Nyumba Zetu Property">
-    <div class="project-content">
-      <h3>Nyumba Zetu Property</h3>
-      <p>Real estate listing platform with advanced search features.</p>
-      <a href="https://nyumbazetu.com" target="_blank">View Project</a>
-    </div>
-  </div>
-</div>
 </section>
+
 
 <hr class="section-divider">
 
