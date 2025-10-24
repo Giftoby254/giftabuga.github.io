@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -10,7 +11,7 @@
       --accent: #f7c948;
       --light: #f9f9f9;
       --dark: #222;
-      --transition: 0.4s ease;
+      --transition: 0.5s ease;
     }
 
     * {
@@ -77,6 +78,14 @@
     section {
       padding: 80px 20px;
       position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     hr.section-divider {
@@ -438,17 +447,17 @@
     <h2>What Clients Say</h2>
     <div class="testimonial-container">
       <div class="testimonial-card">
-        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client 1" />
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client 1" />
         <div class="testimonial-text">"Gift built a visually stunning website that perfectly represents our brand. His attention to detail was exceptional."</div>
         <div class="testimonial-name">— Wanjiku Mwangi</div>
       </div>
       <div class="testimonial-card">
-        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Client 2" />
+        <img src="https://randomuser.me/api/portraits/men/50.jpg" alt="Client 2" />
         <div class="testimonial-text">"I was impressed by how responsive and fast our new platform is. Gift made the process smooth and explained every step clearly."</div>
         <div class="testimonial-name">— Kevin Otieno</div>
       </div>
       <div class="testimonial-card">
-        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Client 3" />
+        <img src="https://randomuser.me/api/portraits/women/30.jpg" alt="Client 3" />
         <div class="testimonial-text">"Professional, friendly, and extremely talented. Gift delivered a masterpiece website that boosted our engagement by 60%."</div>
         <div class="testimonial-name">— Sarah Muthoni</div>
       </div>
@@ -485,27 +494,28 @@
     <h2>Pricing Plans</h2>
     <div class="pricing-container">
       <div class="pricing-card">
-        <div class="plan-icon">💻</div>
+        <div class="plan-icon">🖥️</div>
         <h3>Basic</h3>
-        <p class="price">$199</p>
-        <p>Simple 1-page website</p>
+        <div class="price">$299</div>
+        <p>Responsive website design</p>
+        <p>3 pages</p>
         <p>Email support</p>
       </div>
       <div class="pricing-card highlight">
-        <div class="plan-icon">🌐</div>
+        <div class="plan-icon">🚀</div>
         <h3>Pro</h3>
-        <p class="price">$499</p>
-        <p>Multi-page website</p>
-        <p>Responsive design & SEO</p>
+        <div class="price">$499</div>
+        <p>Up to 10 pages</p>
+        <p>SEO optimization</p>
         <p>Priority support</p>
       </div>
       <div class="pricing-card">
-        <div class="plan-icon">🚀</div>
-        <h3>Premium</h3>
-        <p class="price">$999</p>
-        <p>Custom web applications</p>
-        <p>Advanced SEO</p>
-        <p>24/7 Support</p>
+        <div class="plan-icon">🌐</div>
+        <h3>Enterprise</h3>
+        <div class="price">$999</div>
+        <p>Custom web application</p>
+        <p>Unlimited pages</p>
+        <p>Dedicated support</p>
       </div>
     </div>
   </section>
@@ -513,9 +523,23 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Gift Abuga. All rights reserved.</p>
-    <p>Follow me on <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">GitHub</a></p>
+    &copy; 2025 Gift Abuga | Developed with ❤️ in Africa | <a href="#hero">Back to Top</a>
   </footer>
+
+  <script>
+    // ------------------ SCROLL ANIMATION ------------------
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 
 </body>
 </html>
