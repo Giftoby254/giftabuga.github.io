@@ -11,7 +11,12 @@
       --secondary: #006b3c;
       --light: #f9f9f9;
       --dark: #222;
-      --transition: 0.3s ease-in-out;
+      --transition: 0.4s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -19,31 +24,29 @@
       margin: 0;
       background: var(--light);
       color: var(--dark);
-      scroll-behavior: smooth;
     }
 
     /* NAVIGATION */
     nav {
       background: var(--primary);
-      padding: 12px 0;
+      padding: 14px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
 
     nav ul {
       display: flex;
+      justify-content: center;
       list-style: none;
       margin: 0;
       padding: 0;
+      flex-wrap: wrap;
     }
 
     nav ul li {
-      margin: 0 20px;
+      margin: 0 15px;
     }
 
     nav ul li a {
@@ -62,9 +65,9 @@
       min-height: 100vh;
       padding: 80px 20px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
       text-align: center;
     }
 
@@ -74,18 +77,19 @@
       font-size: 2rem;
     }
 
-    /* HERO SECTION */
+    /* HERO */
     #home {
       background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       position: relative;
       color: white;
+      overflow: hidden;
     }
 
     #home::after {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0,0,0,0.55);
       z-index: 0;
     }
 
@@ -93,25 +97,29 @@
       position: relative;
       z-index: 1;
       max-width: 700px;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero-content h1 {
       font-size: 3rem;
-      margin-bottom: 10px;
     }
 
     .hero-content p {
       font-size: 1.2rem;
-      margin-bottom: 30px;
+      margin: 15px 0 25px;
     }
 
     .cta-buttons a {
-      display: inline-block;
-      margin: 5px 10px;
-      padding: 12px 25px;
       background: var(--primary);
+      padding: 12px 25px;
       color: white;
-      border-radius: 5px;
+      border-radius: 6px;
+      margin: 5px;
       text-decoration: none;
       font-weight: bold;
       transition: var(--transition);
@@ -121,10 +129,9 @@
       background: var(--secondary);
     }
 
-    /* ABOUT SECTION */
+    /* ABOUT */
     #about {
-      background: url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      background-attachment: fixed;
+      background: url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80') center/cover;
       color: white;
       position: relative;
     }
@@ -132,7 +139,7 @@
     #about::after {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      inset: 0;
       background: rgba(0,0,0,0.6);
       z-index: 0;
     }
@@ -144,19 +151,11 @@
       background: rgba(0,0,0,0.5);
       padding: 30px;
       border-radius: 10px;
-      line-height: 1.7;
     }
 
-    .about-content p {
-      font-size: 1.05rem;
-    }
-
-    /* PROJECTS SECTION */
+    /* PROJECTS */
     #projects {
-      background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      background-attachment: fixed;
-      color: white;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      background: #fff;
     }
 
     .projects-grid {
@@ -165,52 +164,92 @@
       gap: 20px;
       max-width: 1100px;
       width: 100%;
-      z-index: 1;
     }
 
     .project-card {
-      background: rgba(255, 255, 255, 0.15);
+      background: #f3f3f3;
       border-radius: 10px;
-      padding: 15px;
-      backdrop-filter: blur(5px);
+      overflow: hidden;
       transition: var(--transition);
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255,255,255,0.3);
     }
 
     .project-card img {
       width: 100%;
-      border-radius: 8px;
       height: 180px;
       object-fit: cover;
     }
 
-    .project-card h3 {
-      margin: 10px 0;
-      color: #fff;
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
 
-    .project-card a {
-      color: #fff;
-      text-decoration: underline;
-      font-weight: bold;
+    /* BLOG */
+    #blog {
+      background: #f8f8f8;
     }
 
-    /* TESTIMONIALS SECTION */
-    #testimonials {
-      background: url('https://images.unsplash.com/photo-1581093588401-22a3c1a8e3a8?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      background-attachment: fixed;
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .blog-card h3 {
+      margin: 15px;
+      color: var(--primary);
+    }
+
+    .blog-card p {
+      margin: 0 15px 15px;
+      font-size: 0.95rem;
+    }
+
+    .read-more {
+      background: var(--primary);
       color: white;
+      display: inline-block;
+      margin: 0 0 20px 15px;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .read-more:hover {
+      background: var(--secondary);
+    }
+
+    /* TESTIMONIALS */
+    #testimonials {
+      background: url('https://images.unsplash.com/photo-1581093588401-22a3c1a8e3a8?auto=format&fit=crop&w=1600&q=80') center/cover;
       position: relative;
+      color: white;
     }
 
     #testimonials::after {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      inset: 0;
       background: rgba(0,0,0,0.6);
       z-index: 0;
     }
@@ -218,51 +257,24 @@
     .testimonial-container {
       position: relative;
       z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
       max-width: 1100px;
-      width: 100%;
+      display: grid;
+      gap: 20px;
     }
 
     .testimonial-card {
       background: rgba(255,255,255,0.1);
-      border-radius: 10px;
       padding: 25px;
-      backdrop-filter: blur(8px);
-      transition: var(--transition);
-      line-height: 1.6;
+      border-radius: 10px;
+      backdrop-filter: blur(6px);
     }
 
-    .testimonial-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255,255,255,0.25);
-    }
-
-    .testimonial-card h4 {
-      color: #00ff88;
-      margin-top: 15px;
-    }
-
-    /* PRICING SECTION */
+    /* PRICING */
     #pricing {
-      background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d1?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      background-attachment: fixed;
-      color: white;
-      position: relative;
-    }
-
-    #pricing::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 0;
+      background: #fff;
     }
 
     .pricing-container {
-      position: relative;
-      z-index: 1;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
@@ -271,46 +283,29 @@
     }
 
     .pricing-card {
-      background: rgba(255,255,255,0.1);
+      background: #f3f3f3;
       border-radius: 10px;
       padding: 25px;
-      backdrop-filter: blur(8px);
       transition: var(--transition);
     }
 
     .pricing-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255,255,255,0.25);
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     }
 
-    .pricing-card h3 {
-      color: #00ff88;
-      margin-bottom: 10px;
-    }
-
-    .pricing-card p {
-      margin: 5px 0;
-    }
-
-    .pricing-price {
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: #fff;
-      margin-top: 15px;
-    }
-
-    /* CONTACT SECTION */
+    /* CONTACT */
     #contact {
-      background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      color: white;
+      background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80') center/cover;
       position: relative;
+      color: white;
     }
 
     #contact::after {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
+      inset: 0;
+      background: rgba(0,0,0,0.6);
       z-index: 0;
     }
 
@@ -321,204 +316,180 @@
       padding: 30px;
       border-radius: 10px;
       max-width: 600px;
-      width: 100%;
     }
 
-    .contact-content p a {
-      color: #00ff88;
-      text-decoration: none;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    input, textarea {
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      width: 100%;
-      font-size: 1rem;
-    }
-
-    button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: var(--transition);
-    }
-
-    button:hover {
-      background: var(--secondary);
-    }
-
-    footer {
-      text-align: center;
-      background: var(--primary);
-      color: white;
-      padding: 20px;
-    }
-
-    .social-icons a {
-      margin: 0 10px;
-      display: inline-block;
-    }
-
-    .social-icons img {
+    .social-icons a img {
       width: 30px;
-      height: 30px;
+      margin: 5px;
       filter: brightness(0) invert(1);
       transition: var(--transition);
     }
 
-    .social-icons img:hover {
-      transform: scale(1.1);
+    .social-icons a img:hover {
+      transform: scale(1.2);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .useful-links {
+      margin: 10px 0;
+    }
+
+    .useful-links a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: var(--transition);
+    }
+
+    .useful-links a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2.2rem;
-      }
-      .hero-content p {
-        font-size: 1rem;
-      }
+      .hero-content h1 { font-size: 2.2rem; }
+      .hero-content p { font-size: 1rem; }
     }
   </style>
 </head>
-
 <body>
-  <!-- NAVIGATION -->
+
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- HOME -->
   <section id="home">
     <div class="hero-content">
       <h1>Gift Abuga</h1>
-      <p>Web Developer • UI/UX Designer • Tech Consultant from Kenya</p>
+      <p>Building Modern, Interactive, and Scalable Websites for All Ages</p>
       <div class="cta-buttons">
-        <a href="#projects">View My Projects</a>
+        <a href="#projects">See My Work</a>
         <a href="#contact">Hire Me</a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="about-content">
       <h2>About Me</h2>
-      <p>I'm <strong>Gift Abuga</strong>, a professional web developer and digital solutions expert based in Kenya. With over 5 years of experience, I craft responsive, scalable, and user-centered web applications that help businesses grow and connect with their customers. I specialize in front-end and back-end technologies, ensuring that each project I deliver is fast, secure, and visually stunning.</p>
-      <p>My expertise spans HTML, CSS, JavaScript, PHP, Laravel, React, and UX strategy. I’m passionate about turning great ideas into functional, high-performing digital products that empower businesses to thrive in an ever-changing digital world.</p>
+      <p>I’m <strong>Gift Abuga</strong>, a seasoned web developer and UI/UX designer from Kenya with a deep passion for digital innovation. My journey in technology is driven by creativity, inclusivity, and functionality — ensuring that every digital product I create is engaging and easy to use for people of all ages and backgrounds.</p>
+      <p>I specialize in crafting high-performance websites and applications that merge clean design with robust code. I believe in the power of the web to connect, empower, and inspire.</p>
       <h2>Our Vision</h2>
-      <p>To empower African and global businesses with transformative digital tools and user-focused design, bridging technology and creativity to build a connected and prosperous digital ecosystem.</p>
+      <p>To empower Africa and the world through technology that’s inclusive, accessible, and impactful — bridging the gap between creativity and functionality for every generation.</p>
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
         <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Touch Wild Tours">
         <h3>Touch Wild Tours</h3>
-        <a href="https://touchwild.co.ke/" target="_blank">Visit Site</a>
+        <p>Travel agency website showcasing tours and packages with booking integrations.</p>
       </div>
       <div class="project-card">
         <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Pega Tours Kenya">
         <h3>Pega Tours Kenya</h3>
-        <a href="https://pegatours.co.ke/" target="_blank">Visit Site</a>
+        <p>Responsive tourism platform with gallery and dynamic itinerary builder.</p>
       </div>
       <div class="project-card">
         <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="Nyumba Zetu Property">
         <h3>Nyumba Zetu Property</h3>
-        <a href="https://www.nyumbazetu.com/" target="_blank">Visit Site</a>
+        <p>Real estate listing portal with admin dashboard and advanced filtering.</p>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+  <section id="blog">
+    <h2>Latest Blog Posts</h2>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1581276879432-15a19d654956?auto=format&fit=crop&w=800&q=80" alt="Web Trends">
+        <h3>Top 5 Web Design Trends in 2025</h3>
+        <p>Explore the latest in minimalism, accessibility, and interactivity shaping the modern web.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1590608897129-79da98d159b4?auto=format&fit=crop&w=800&q=80" alt="UX Strategy">
+        <h3>Designing for All Ages</h3>
+        <p>How inclusive UX and responsive design can make technology accessible to everyone.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1532619675605-1d9b53a68783?auto=format&fit=crop&w=800&q=80" alt="SEO Kenya">
+        <h3>Why SEO Matters for Kenyan Businesses</h3>
+        <p>Learn how to reach local and global clients through strategic optimization.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </section>
+
   <section id="testimonials">
-    <h2>Testimonials</h2>
+    <h2>What Clients Say</h2>
     <div class="testimonial-container">
       <div class="testimonial-card">
-        <p>"Gift transformed our tour company’s online presence into something truly world-class. Our website now attracts more visitors, loads faster, and converts leads effortlessly. His attention to detail and professionalism made the entire experience smooth and stress-free."</p>
-        <h4>– Wanjiku Mwangi, CEO, Touch Wild Tours</h4>
+        <p>"Gift’s technical expertise and attention to detail are unmatched. Our company website is not only beautiful but lightning fast. The results have been incredible!"</p>
+        <h4>— Wanjiku Mwangi, Touch Wild Tours</h4>
       </div>
       <div class="testimonial-card">
-        <p>"We needed a website that would stand out in the competitive real estate industry, and Gift delivered beyond expectations. His UI/UX approach brought our brand to life with a sleek, modern look and user experience that keeps our clients engaged."</p>
-        <h4>– Kevin Otieno, Manager, Nyumba Zetu Property</h4>
+        <p>"Working with Gift was a seamless experience. He understood our brand instantly and delivered an interactive, user-friendly platform that exceeded expectations."</p>
+        <h4>— Kevin Otieno, Nyumba Zetu Property</h4>
       </div>
       <div class="testimonial-card">
-        <p>"From concept to deployment, Gift was an absolute professional. He not only developed our eCommerce platform but also guided us on SEO, hosting, and scalability. Our online sales have grown tremendously since the launch."</p>
-        <h4>– Sarah Muthoni, Founder, EcoStyle Kenya</h4>
+        <p>"Professional, creative, and incredibly patient. Gift is a true partner in every sense. He goes above and beyond to make your digital vision a reality."</p>
+        <h4>— Sarah Muthoni, EcoStyle Kenya</h4>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
   <section id="pricing">
     <h2>Website Packages (Kenyan Rates)</h2>
     <div class="pricing-container">
       <div class="pricing-card">
         <h3>Basic Website</h3>
-        <p>Ideal for small businesses or personal portfolios</p>
-        <p>✔ Up to 3 pages (Home, About, Contact)</p>
-        <p>✔ Mobile Responsive</p>
-        <p>✔ Basic SEO setup</p>
-        <p>✔ Delivery: 3–5 days</p>
-        <p class="pricing-price">One-time: KES 25,000</p>
-        <p>Maintenance: KES 3,000/year</p>
+        <p>For small businesses and personal portfolios</p>
+        <p><strong>One-time:</strong> KES 25,000</p>
+        <p><strong>Maintenance:</strong> KES 3,000/year</p>
       </div>
       <div class="pricing-card">
         <h3>Standard Website</h3>
-        <p>Perfect for SMEs and service-based companies</p>
-        <p>✔ Up to 7 pages</p>
-        <p>✔ Custom Design + Blog Setup</p>
-        <p>✔ Analytics Integration</p>
-        <p>✔ SEO Optimization</p>
-        <p>✔ Delivery: 5–7 days</p>
-        <p class="pricing-price">One-time: KES 45,000</p>
-        <p>Maintenance: KES 5,000/year</p>
+        <p>For SMEs and service-based brands</p>
+        <p><strong>One-time:</strong> KES 45,000</p>
+        <p><strong>Maintenance:</strong> KES 5,000/year</p>
       </div>
       <div class="pricing-card">
         <h3>Dynamic Website</h3>
-        <p>Best for eCommerce or database-driven systems</p>
-        <p>✔ Unlimited Pages</p>
-        <p>✔ Admin Dashboard</p>
-        <p>✔ Payment Integration</p>
-        <p>✔ SEO + Analytics</p>
-        <p>✔ Delivery: 10–14 days</p>
-        <p class="pricing-price">One-time: KES 85,000</p>
-        <p>Maintenance: KES 10,000/year</p>
+        <p>For eCommerce and large enterprises</p>
+        <p><strong>One-time:</strong> KES 85,000</p>
+        <p><strong>Maintenance:</strong> KES 10,000/year</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="contact-content">
       <h2>Get in Touch</h2>
       <p>Email: <a href="mailto:giftabuga@gmail.com">giftabuga@gmail.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/254111971411?text=Hi%20Gift,%20I%20want%20to%20discuss%20a%20project.">Chat on WhatsApp</a></p>
+      <p>WhatsApp: <a href="https://wa.me/254111971411">Chat on WhatsApp</a></p>
       <form>
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5"></textarea>
+        <textarea rows="5" placeholder="Your Message"></textarea>
         <button type="submit">Send Message</button>
       </form>
       <div class="social-icons">
@@ -529,7 +500,17 @@
   </section>
 
   <footer>
+    <div class="useful-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#blog">Blog</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
     <p>&copy; 2025 Gift Abuga | Professional Web Developer | All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
