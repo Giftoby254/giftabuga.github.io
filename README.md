@@ -419,7 +419,7 @@ footer a {
     <div class="pricing-card">
       <div class="plan-icon">🖥️</div>
       <h3>Basic</h3>
-      <div class="price">$19</div>
+      <div class="price">$199</div>
       <p>Responsive website design</p>
       <p>3 pages</p>
       <p>Email support</p>
@@ -427,7 +427,7 @@ footer a {
     <div class="pricing-card highlight">
       <div class="plan-icon">🚀</div>
       <h3>Pro</h3>
-      <div class="price">$29</div>
+      <div class="price">$299</div>
       <p>Responsive website + CMS</p>
       <p>Up to 5 pages</p>
       <p>Priority support</p>
@@ -435,7 +435,7 @@ footer a {
     <div class="pricing-card">
       <div class="plan-icon">💼</div>
       <h3>Premium</h3>
-      <div class="price">$49</div>
+      <div class="price">$499</div>
       <p>Custom web development</p>
       <p>Unlimited pages</p>
       <p>Full support</p>
