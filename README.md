@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gift Abuga | Professional Web Developer</title>
+  <title>Gift Abuga | Web Developer</title>
   <style>
     :root {
       --primary: #00a859;
@@ -81,10 +81,25 @@
 
     /* ------------------ HERO ------------------ */
     #hero {
-      background: linear-gradient(to right, #00a859, #008c5e);
+      background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
       padding: 120px 20px;
+      position: relative;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+
+    #hero .content {
+      position: relative;
+      z-index: 1;
     }
 
     #hero h1 {
@@ -111,7 +126,7 @@
       color: var(--primary);
     }
 
-    /* ------------------ INTERACTIVE TESTIMONIALS ------------------ */
+    /* ------------------ TESTIMONIALS ------------------ */
     #testimonials {
       background: linear-gradient(to right, #00a859, #008c5e);
       color: white;
@@ -164,12 +179,52 @@
       color: var(--accent);
     }
 
-    /* ------------------ INTERACTIVE BLOG ------------------ */
-    #blog {
+    /* ------------------ PROJECTS / PORTFOLIO ------------------ */
+    #projects {
       background: linear-gradient(to bottom right, #f5f7fa, #e4f1ed);
     }
 
-    .blog-grid {
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .project-card:hover img {
+      transform: scale(1.05);
+      filter: brightness(0.8);
+    }
+
+    .project-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .project-content h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    /* ------------------ BLOG ------------------ */
+    #blog .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
@@ -182,12 +237,12 @@
       border-radius: 12px;
       overflow: hidden;
       transition: var(--transition);
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 
     .blog-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
     .blog-card img {
@@ -229,12 +284,8 @@
       background: var(--secondary);
     }
 
-    /* ------------------ INTERACTIVE PRICING ------------------ */
-    #pricing {
-      background: linear-gradient(135deg, #ffffff, #f4fff9);
-    }
-
-    .pricing-container {
+    /* ------------------ PRICING ------------------ */
+    #pricing .pricing-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
@@ -247,7 +298,7 @@
       border-radius: 15px;
       padding: 30px;
       text-align: center;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       transition: var(--transition);
       position: relative;
       overflow: hidden;
@@ -255,36 +306,16 @@
 
     .pricing-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .pricing-card::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0,168,89,0.2), transparent 70%);
-      transition: var(--transition);
-      transform: scale(0);
-      z-index: 0;
-    }
-
-    .pricing-card:hover::before {
-      transform: scale(1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     .pricing-card h3 {
       color: var(--primary);
       font-size: 1.5rem;
-      z-index: 1;
-      position: relative;
     }
 
     .pricing-card p {
-      z-index: 1;
-      position: relative;
+      margin: 10px 0;
     }
 
     .price {
@@ -327,12 +358,13 @@
 </head>
 <body>
 
-  <!-- HEADER / NAVIGATION -->
+  <!-- HEADER -->
   <header>
     <nav>
       <div class="logo">Gift Abuga</div>
       <ul>
         <li><a href="#hero">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#pricing">Pricing</a></li>
@@ -340,44 +372,74 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section id="hero">
-    <h1>Professional Web Development Services</h1>
-    <p>Creating stunning websites that drive engagement and growth for your business.</p>
-    <a href="#pricing">Get Started</a>
+    <div class="content">
+      <h1>Professional Web Development Services</h1>
+      <p>Creating stunning, responsive websites that grow your business.</p>
+      <a href="#projects">See My Work</a>
+    </div>
   </section>
 
-  <!-- INTERACTIVE TESTIMONIALS -->
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1581091012184-9fcd5ff6f0c1?auto=format&fit=crop&w=800&q=80" alt="Project 1" />
+        <div class="project-content">
+          <h3>EcoStyle Kenya</h3>
+          <p>Responsive e-commerce website for sustainable products.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1581091012182-9322f97ff1fc?auto=format&fit=crop&w=800&q=80" alt="Project 2" />
+        <div class="project-content">
+          <h3>Touch Wild Tours</h3>
+          <p>Interactive tour booking platform with stunning visuals.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1581091012175-35d1c86f3c4b?auto=format&fit=crop&w=800&q=80" alt="Project 3" />
+        <div class="project-content">
+          <h3>Nyumba Zetu Property</h3>
+          <p>Real estate listing platform with advanced search features.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
   <section id="testimonials">
     <h2>What Clients Say</h2>
     <div class="testimonial-container">
       <div class="testimonial-card">
         <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client 1" />
-        <div class="testimonial-text">"Gift built a visually stunning website that perfectly represents our brand. His attention to detail and creativity were beyond expectations."</div>
-        <div class="testimonial-name">— Wanjiku Mwangi, Touch Wild Tours</div>
+        <div class="testimonial-text">"Gift built a visually stunning website that perfectly represents our brand. His attention to detail was exceptional."</div>
+        <div class="testimonial-name">— Wanjiku Mwangi</div>
       </div>
       <div class="testimonial-card">
         <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Client 2" />
         <div class="testimonial-text">"I was impressed by how responsive and fast our new platform is. Gift made the process smooth and explained every step clearly."</div>
-        <div class="testimonial-name">— Kevin Otieno, Nyumba Zetu Property</div>
+        <div class="testimonial-name">— Kevin Otieno</div>
       </div>
       <div class="testimonial-card">
         <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Client 3" />
-        <div class="testimonial-text">"Professional, friendly, and extremely talented. Gift delivered a masterpiece website that helped boost our online engagement by 60%."</div>
-        <div class="testimonial-name">— Sarah Muthoni, EcoStyle Kenya</div>
+        <div class="testimonial-text">"Professional, friendly, and extremely talented. Gift delivered a masterpiece website that boosted our engagement by 60%."</div>
+        <div class="testimonial-name">— Sarah Muthoni</div>
       </div>
     </div>
   </section>
 
-  <!-- BLOG SECTION -->
+  <!-- BLOG -->
   <section id="blog">
     <h2>Latest Blog Posts</h2>
     <div class="blog-grid">
       <div class="blog-card">
         <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Web Trends" />
         <div class="blog-content">
-          <h3>Top Web Design Trends in 2025</h3>
-          <p>Explore cutting-edge trends shaping digital experiences — from AI personalization to motion design.</p>
+          <h3>Top Web Design Trends 2025</h3>
+          <p>Explore cutting-edge trends shaping digital experiences from AI personalization to motion design.</p>
           <a href="#" class="read-more">Read More</a>
         </div>
       </div>
@@ -385,7 +447,7 @@
         <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Inclusive Design" />
         <div class="blog-content">
           <h3>Designing for All Ages</h3>
-          <p>Inclusive UX design is not just about accessibility — it’s about creating joy and usability for everyone.</p>
+          <p>Inclusive UX design ensures usability and joy for every visitor on your website.</p>
           <a href="#" class="read-more">Read More</a>
         </div>
       </div>
@@ -393,14 +455,14 @@
         <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="SEO Kenya" />
         <div class="blog-content">
           <h3>Why SEO Matters for Kenyan Brands</h3>
-          <p>Learn how local SEO strategies can help Kenyan businesses reach both national and international audiences.</p>
+          <p>Learn how local SEO strategies help Kenyan businesses reach both national and international audiences.</p>
           <a href="#" class="read-more">Read More</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING SECTION -->
+  <!-- PRICING -->
   <section id="pricing">
     <h2>Pricing Plans</h2>
     <div class="pricing-container">
