@@ -188,59 +188,34 @@
       margin-bottom: 10px;
     }
 
-    /* ------------------ TESTIMONIALS ------------------ */
-    #testimonials {
-      background: #f9f9f9;
-      color: var(--dark);
-    }
+    <!-- TESTIMONIALS -->
+<section id="testimonials">
+  <h2>What Clients Say</h2>
+  <div class="testimonial-container">
+    <div class="testimonial-card">
+      <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Client 1" />
+      <div class="testimonial-text">
+        "Gift built a visually stunning website that perfectly represents our brand. His attention to detail was exceptional."
+      </div>
+      <div class="testimonial-name">— Kofi Mensah</div>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Client 2" />
+      <div class="testimonial-text">
+        "I was impressed by how responsive and fast our new platform is. Gift made the process smooth and explained every step clearly."
+      </div>
+      <div class="testimonial-name">— Amina Njeri</div>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://randomuser.me/api/portraits/men/90.jpg" alt="Client 3" />
+      <div class="testimonial-text">
+        "Professional, friendly, and extremely talented. Gift delivered a masterpiece website that boosted our engagement by 60%."
+      </div>
+      <div class="testimonial-name">— Thabo Dlamini</div>
+    </div>
+  </div>
+</section>
 
-    .testimonial-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .testimonial-card {
-      flex: 1 1 300px;
-      max-width: 350px;
-      background: white;
-      border-radius: 12px;
-      padding: 30px 20px 20px 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
-
-    .testimonial-card img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 3px solid var(--primary);
-      object-fit: cover;
-      margin-top: -60px;
-      background: white;
-    }
-
-    .testimonial-text {
-      font-style: italic;
-      margin: 20px 0;
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-
-    .testimonial-name {
-      font-weight: bold;
-      color: var(--primary);
-    }
 
     /* ------------------ BLOG ------------------ */
     #blog .blog-grid {
