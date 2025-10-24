@@ -26,6 +26,48 @@
       color: var(--dark);
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 20px;
+    }
+
+    nav .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+    }
+
     h2 {
       text-align: center;
       color: var(--primary);
@@ -33,11 +75,46 @@
       margin-bottom: 20px;
     }
 
+    section {
+      padding: 80px 20px;
+    }
+
+    /* ------------------ HERO ------------------ */
+    #hero {
+      background: linear-gradient(to right, #00a859, #008c5e);
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    #hero a {
+      background: var(--accent);
+      color: #222;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: var(--transition);
+    }
+
+    #hero a:hover {
+      background: white;
+      color: var(--primary);
+    }
+
     /* ------------------ INTERACTIVE TESTIMONIALS ------------------ */
     #testimonials {
       background: linear-gradient(to right, #00a859, #008c5e);
       color: white;
-      padding: 80px 20px;
     }
 
     .testimonial-container {
@@ -90,7 +167,6 @@
     /* ------------------ INTERACTIVE BLOG ------------------ */
     #blog {
       background: linear-gradient(to bottom right, #f5f7fa, #e4f1ed);
-      padding: 80px 20px;
     }
 
     .blog-grid {
@@ -145,7 +221,6 @@
       padding: 8px 16px;
       background: var(--primary);
       color: white;
-      text-decoration: none;
       border-radius: 5px;
       transition: var(--transition);
     }
@@ -157,7 +232,6 @@
     /* ------------------ INTERACTIVE PRICING ------------------ */
     #pricing {
       background: linear-gradient(135deg, #ffffff, #f4fff9);
-      padding: 80px 20px;
     }
 
     .pricing-container {
@@ -224,6 +298,19 @@
       color: white;
     }
 
+    /* ------------------ FOOTER ------------------ */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer a {
+      color: var(--accent);
+    }
+
+    /* ------------------ MEDIA QUERIES ------------------ */
     @media (max-width: 768px) {
       .testimonial-card {
         flex: 0 0 90%;
@@ -231,10 +318,34 @@
       h2 {
         font-size: 1.8rem;
       }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header>
+    <nav>
+      <div class="logo">Gift Abuga</div>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <h1>Professional Web Development Services</h1>
+    <p>Creating stunning websites that drive engagement and growth for your business.</p>
+    <a href="#pricing">Get Started</a>
+  </section>
 
   <!-- INTERACTIVE TESTIMONIALS -->
   <section id="testimonials">
@@ -258,7 +369,7 @@
     </div>
   </section>
 
-  <!-- INTERACTIVE BLOG -->
+  <!-- BLOG SECTION -->
   <section id="blog">
     <h2>Latest Blog Posts</h2>
     <div class="blog-grid">
@@ -289,29 +400,33 @@
     </div>
   </section>
 
-  <!-- INTERACTIVE PRICING -->
+  <!-- PRICING SECTION -->
   <section id="pricing">
-    <h2>Website Packages (Kenyan Rates)</h2>
+    <h2>Pricing Plans</h2>
     <div class="pricing-container">
       <div class="pricing-card">
-        <h3>Basic Website</h3>
-        <p>Perfect for individuals and small businesses starting online.</p>
-        <p class="price">KES 25,000 (One-time)</p>
-        <p>Maintenance: KES 3,000/year</p>
+        <h3>Basic</h3>
+        <p class="price">$199</p>
+        <p>Perfect for small projects and startups. Includes basic web design and responsive layout.</p>
       </div>
       <div class="pricing-card highlight">
-        <h3>Standard Website</h3>
-        <p>Ideal for SMEs and professional service providers.</p>
-        <p class="price">KES 45,000 (One-time)</p>
-        <p>Maintenance: KES 5,000/year</p>
+        <h3>Professional</h3>
+        <p class="price">$499</p>
+        <p>For medium businesses. Includes advanced design, CMS integration, and SEO optimization.</p>
       </div>
       <div class="pricing-card">
-        <h3>Dynamic Website</h3>
-        <p>Best for eCommerce and advanced interactive systems.</p>
-        <p class="price">KES 85,000 (One-time)</p>
-        <p>Maintenance: KES 10,000/year</p>
+        <h3>Premium</h3>
+        <p class="price">$999</p>
+        <p>Complete package for large projects with custom features, analytics, and support.</p>
       </div>
     </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Gift Abuga | Designed & Developed by Gift Abuga</p>
+    <p><a href="mailto:contact@giftabuga.com">contact@giftabuga.com</a></p>
+  </footer>
+
 </body>
 </html>
