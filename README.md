@@ -188,34 +188,30 @@
       margin-bottom: 10px;
     }
 
-    <!-- TESTIMONIALS -->
+  <!-- TESTIMONIALS -->
 <section id="testimonials">
   <h2>What Clients Say</h2>
-  <div class="testimonial-container">
-    <div class="testimonial-card">
-      <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Client 1" />
+  <div class="testimonial-parent">
+    <div class="testimonial-child">
       <div class="testimonial-text">
-        "Gift built a visually stunning website that perfectly represents our brand. His attention to detail was exceptional."
+        "Working with Gift was an absolute pleasure. He took the time to understand our brand, the target audience, and our objectives. The final website exceeded all expectations, with a seamless user experience and a design that truly reflects our values. The project was delivered ahead of schedule and on budget, which is rare in web development. Highly recommended!"
       </div>
       <div class="testimonial-name">— Kofi Mensah</div>
     </div>
-    <div class="testimonial-card">
-      <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Client 2" />
+    <div class="testimonial-child">
       <div class="testimonial-text">
-        "I was impressed by how responsive and fast our new platform is. Gift made the process smooth and explained every step clearly."
+        "Gift is a true professional. From the initial consultation to the final launch, every step was handled with great care and attention. He translated our ideas into a visually stunning and highly functional platform. We also appreciated his willingness to explain technical aspects clearly and provide actionable suggestions. Our online engagement has increased significantly thanks to his work."
       </div>
       <div class="testimonial-name">— Amina Njeri</div>
     </div>
-    <div class="testimonial-card">
-      <img src="https://randomuser.me/api/portraits/men/90.jpg" alt="Client 3" />
+    <div class="testimonial-child">
       <div class="testimonial-text">
-        "Professional, friendly, and extremely talented. Gift delivered a masterpiece website that boosted our engagement by 60%."
+        "The website Gift developed for us is nothing short of exceptional. Beyond the aesthetics, the performance, responsiveness, and usability are remarkable. Gift demonstrated creativity, technical expertise, and reliability throughout the project. He went above and beyond by providing support and guidance even after the launch. Our customers love the new experience!"
       </div>
       <div class="testimonial-name">— Thabo Dlamini</div>
     </div>
   </div>
 </section>
-
 
     /* ------------------ BLOG ------------------ */
     #blog .blog-grid {
