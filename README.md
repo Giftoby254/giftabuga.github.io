@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gift Abuga | Web Developer from Kenya</title>
+  <title>Gift Abuga | Professional Web Developer from Kenya</title>
   <link rel="icon" href="https://img.icons8.com/color/48/000000/code.png" />
   <style>
     :root {
@@ -57,7 +57,7 @@
       color: #e0e0e0;
     }
 
-    /* SECTIONS BASE */
+    /* SECTIONS */
     section {
       min-height: 100vh;
       padding: 80px 20px;
@@ -74,7 +74,7 @@
       font-size: 2rem;
     }
 
-    /* HERO / HOME SECTION */
+    /* HERO SECTION */
     #home {
       background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       position: relative;
@@ -119,6 +119,36 @@
 
     .cta-buttons a:hover {
       background: var(--secondary);
+    }
+
+    /* ABOUT SECTION */
+    #about {
+      background: url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      background-attachment: fixed;
+      color: white;
+      position: relative;
+    }
+
+    #about::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+
+    .about-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      background: rgba(0,0,0,0.5);
+      padding: 30px;
+      border-radius: 10px;
+      line-height: 1.7;
+    }
+
+    .about-content p {
+      font-size: 1.05rem;
     }
 
     /* PROJECTS SECTION */
@@ -167,6 +197,106 @@
       color: #fff;
       text-decoration: underline;
       font-weight: bold;
+    }
+
+    /* TESTIMONIALS SECTION */
+    #testimonials {
+      background: url('https://images.unsplash.com/photo-1581093588401-22a3c1a8e3a8?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      background-attachment: fixed;
+      color: white;
+      position: relative;
+    }
+
+    #testimonials::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+
+    .testimonial-container {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 25px;
+      backdrop-filter: blur(8px);
+      transition: var(--transition);
+      line-height: 1.6;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.25);
+    }
+
+    .testimonial-card h4 {
+      color: #00ff88;
+      margin-top: 15px;
+    }
+
+    /* PRICING SECTION */
+    #pricing {
+      background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d1?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      background-attachment: fixed;
+      color: white;
+      position: relative;
+    }
+
+    #pricing::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+
+    .pricing-container {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    .pricing-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 25px;
+      backdrop-filter: blur(8px);
+      transition: var(--transition);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.25);
+    }
+
+    .pricing-card h3 {
+      color: #00ff88;
+      margin-bottom: 10px;
+    }
+
+    .pricing-card p {
+      margin: 5px 0;
+    }
+
+    .pricing-price {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #fff;
+      margin-top: 15px;
     }
 
     /* CONTACT SECTION */
@@ -229,7 +359,6 @@
       background: var(--secondary);
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       background: var(--primary);
@@ -237,7 +366,22 @@
       padding: 20px;
     }
 
-    /* RESPONSIVE */
+    .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+      transition: var(--transition);
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
     @media (max-width: 768px) {
       .hero-content h1 {
         font-size: 2.2rem;
@@ -250,17 +394,19 @@
 </head>
 
 <body>
-
   <!-- NAVIGATION -->
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#pricing">Pricing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- HOME SECTION -->
+  <!-- HOME -->
   <section id="home">
     <div class="hero-content">
       <h1>Gift Abuga</h1>
@@ -272,7 +418,18 @@
     </div>
   </section>
 
-  <!-- PROJECTS SECTION -->
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>I'm <strong>Gift Abuga</strong>, a professional web developer and digital solutions expert based in Kenya. With over 5 years of experience, I craft responsive, scalable, and user-centered web applications that help businesses grow and connect with their customers. I specialize in front-end and back-end technologies, ensuring that each project I deliver is fast, secure, and visually stunning.</p>
+      <p>My expertise spans HTML, CSS, JavaScript, PHP, Laravel, React, and UX strategy. I’m passionate about turning great ideas into functional, high-performing digital products that empower businesses to thrive in an ever-changing digital world.</p>
+      <h2>Our Vision</h2>
+      <p>To empower African and global businesses with transformative digital tools and user-focused design, bridging technology and creativity to build a connected and prosperous digital ecosystem.</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects-grid">
@@ -294,26 +451,85 @@
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact">
-    <div class="contact-content">
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:giftabuga@gmail.com">giftabuga@gmail.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/254111971411" target="_blank">Chat on WhatsApp</a></p>
-
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-container">
+      <div class="testimonial-card">
+        <p>"Gift transformed our tour company’s online presence into something truly world-class. Our website now attracts more visitors, loads faster, and converts leads effortlessly. His attention to detail and professionalism made the entire experience smooth and stress-free."</p>
+        <h4>– Wanjiku Mwangi, CEO, Touch Wild Tours</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"We needed a website that would stand out in the competitive real estate industry, and Gift delivered beyond expectations. His UI/UX approach brought our brand to life with a sleek, modern look and user experience that keeps our clients engaged."</p>
+        <h4>– Kevin Otieno, Manager, Nyumba Zetu Property</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"From concept to deployment, Gift was an absolute professional. He not only developed our eCommerce platform but also guided us on SEO, hosting, and scalability. Our online sales have grown tremendously since the launch."</p>
+        <h4>– Sarah Muthoni, Founder, EcoStyle Kenya</h4>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Gift Abuga. All rights reserved.</p>
-  </footer>
+  <!-- PRICING -->
+  <section id="pricing">
+    <h2>Website Packages (Kenyan Rates)</h2>
+    <div class="pricing-container">
+      <div class="pricing-card">
+        <h3>Basic Website</h3>
+        <p>Ideal for small businesses or personal portfolios</p>
+        <p>✔ Up to 3 pages (Home, About, Contact)</p>
+        <p>✔ Mobile Responsive</p>
+        <p>✔ Basic SEO setup</p>
+        <p>✔ Delivery: 3–5 days</p>
+        <p class="pricing-price">One-time: KES 25,000</p>
+        <p>Maintenance: KES 3,000/year</p>
+      </div>
+      <div class="pricing-card">
+        <h3>Standard Website</h3>
+        <p>Perfect for SMEs and service-based companies</p>
+        <p>✔ Up to 7 pages</p>
+        <p>✔ Custom Design + Blog Setup</p>
+        <p>✔ Analytics Integration</p>
+        <p>✔ SEO Optimization</p>
+        <p>✔ Delivery: 5–7 days</p>
+        <p class="pricing-price">One-time: KES 45,000</p>
+        <p>Maintenance: KES 5,000/year</p>
+      </div>
+      <div class="pricing-card">
+        <h3>Dynamic Website</h3>
+        <p>Best for eCommerce or database-driven systems</p>
+        <p>✔ Unlimited Pages</p>
+        <p>✔ Admin Dashboard</p>
+        <p>✔ Payment Integration</p>
+        <p>✔ SEO + Analytics</p>
+        <p>✔ Delivery: 10–14 days</p>
+        <p class="pricing-price">One-time: KES 85,000</p>
+        <p>Maintenance: KES 10,000/year</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-content">
+      <h2>Get in Touch</h2>
+      <p>Email: <a href="mailto:giftabuga@gmail.com">giftabuga@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/254111971411?text=Hi%20Gift,%20I%20want%20to%20discuss%20a%20project.">Chat on WhatsApp</a></p>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/gift-abuga/" target="_blank"><img src="https://img.icons8.com/ios-filled/50/linkedin.png" alt="LinkedIn"></a>
+        <a href="https://wa.me/254111971411" target="_blank"><img src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp"></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Gift Abuga | Professional Web Developer | All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
