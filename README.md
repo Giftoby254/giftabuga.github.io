@@ -1,5 +1,4 @@
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -87,15 +86,6 @@ section {
 section.show {
   opacity: 1;
   transform: translateY(0);
-}
-
-hr.section-divider {
-  border: none;
-  height: 4px;
-  background: var(--primary);
-  width: 80px;
-  margin: 40px auto;
-  border-radius: 2px;
 }
 
 /* ------------------ HERO ------------------ */
@@ -216,7 +206,8 @@ hr.section-divider {
 }
 
 /* ------------------ PRICING ------------------ */
-#pricing .pricing-container {
+#pricing .pricing-container,
+#testimonials .testimonial-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
@@ -224,7 +215,7 @@ hr.section-divider {
   margin: 0 auto;
 }
 
-.pricing-card {
+.pricing-card, .testimonial-card {
   background: white;
   border-radius: 15px;
   padding: 30px;
@@ -235,18 +226,18 @@ hr.section-divider {
   overflow: hidden;
 }
 
-.pricing-card:hover {
+.pricing-card:hover, .testimonial-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.pricing-card h3 {
+.pricing-card h3, .testimonial-card h3 {
   color: var(--primary);
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
-.pricing-card p {
+.pricing-card p, .testimonial-card p {
   margin: 10px 0;
   font-size: 0.95rem;
 }
@@ -272,6 +263,17 @@ hr.section-divider {
   margin-bottom: 10px;
 }
 
+/* ------------------ TESTIMONIALS ------------------ */
+.testimonial-card p {
+  font-style: italic;
+  color: #555;
+}
+
+.testimonial-card h3 {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
 /* ------------------ FOOTER ------------------ */
 footer {
   background: var(--dark);
@@ -294,6 +296,54 @@ footer a {
     gap: 10px;
   }
 }
+
+/* ------------------ FLOATING BUTTONS ------------------ */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.floating-buttons a {
+  background: var(--primary);
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: var(--transition);
+}
+
+.floating-buttons a:hover {
+  background: var(--accent);
+  color: #222;
+}
+
+/* ------------------ SIDE FLOATING WHATSAPP ------------------ */
+.side-whatsapp {
+  position: fixed;
+  right: 0;
+  top: 40%;
+  background: var(--primary);
+  color: white;
+  padding: 15px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.side-whatsapp:hover {
+  background: var(--accent);
+  color: #222;
+}
 </style>
 </head>
 <body>
@@ -306,6 +356,7 @@ footer a {
       <li><a href="#hero">Home</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
     </ul>
   </nav>
 </header>
@@ -391,6 +442,26 @@ footer a {
     </div>
   </div>
 </section>
+<hr class="section-divider">
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <h2>What Clients Say</h2>
+  <div class="testimonial-container">
+    <div class="testimonial-card">
+      <p>"Gift built our company website in record time. Truly professional!"</p>
+      <h3>James Mwangi</h3>
+    </div>
+    <div class="testimonial-card">
+      <p>"Amazing work! Our bookings have increased thanks to the new site."</p>
+      <h3>Faith Wanjiru</h3>
+    </div>
+    <div class="testimonial-card">
+      <p>"Very responsive and attentive. Highly recommend for web development."</p>
+      <h3>David Omondi</h3>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -398,6 +469,15 @@ footer a {
   <a href="https://wa.me/254111971411?text=lets%20partner%20in%20a%20project." target="_blank">WhatsApp Me</a> | 
   <a href="tel:+254111971411">Call Me</a>
 </footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-buttons">
+  <a href="https://wa.me/254111971411?text=lets%20partner%20in%20a%20project." target="_blank">📱</a>
+  <a href="tel:+254111971411">📞</a>
+</div>
+
+<!-- SIDE FLOATING WHATSAPP -->
+<a href="https://wa.me/254111971411?text=lets%20partner%20in%20a%20project." target="_blank" class="side-whatsapp">💬 WhatsApp</a>
 
 <script>
 // Fade-in on scroll
