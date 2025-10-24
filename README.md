@@ -1,8 +1,9 @@
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Gift Abuga | Web Developer</title>
 <style>
 :root {
@@ -130,16 +131,20 @@ hr.section-divider {
   margin-bottom: 30px;
 }
 
-#hero a {
+#hero .contact-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: var(--accent);
   color: #222;
   padding: 12px 25px;
   border-radius: 5px;
   font-weight: bold;
+  margin: 5px;
   transition: var(--transition);
 }
 
-#hero a:hover {
+#hero .contact-buttons a:hover {
   background: white;
   color: var(--primary);
 }
@@ -151,8 +156,8 @@ hr.section-divider {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -161,7 +166,7 @@ hr.section-divider {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: var(--transition);
   position: relative;
   text-align: center;
@@ -169,130 +174,45 @@ hr.section-divider {
 
 .project-card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
   transition: var(--transition);
 }
 
 .project-card:hover img {
   transform: scale(1.05);
-  filter: brightness(0.8);
+  filter: brightness(0.85);
 }
 
-.project-card h3 {
-  color: var(--primary);
-  margin: 15px 0 10px 0;
-}
-
-.project-card p {
-  margin: 0 0 15px 0;
-  font-size: 0.95rem;
-}
-
-.project-card a {
-  display: inline-block;
-  margin-bottom: 15px;
-  padding: 8px 16px;
-  background: var(--primary);
-  color: white;
-  border-radius: 5px;
-  transition: var(--transition);
-}
-
-.project-card a:hover {
-  background: var(--secondary);
-}
-
-/* ------------------ TESTIMONIALS ------------------ */
-#testimonials {
-  background: #fff;
-}
-
-.testimonial-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.testimonial-card {
-  background: white;
-  border-radius: 15px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.testimonial-card .testimonial-text {
-  font-size: 1rem;
-  margin-bottom: 15px;
-}
-
-.testimonial-card .testimonial-name {
-  font-weight: bold;
-  color: var(--primary);
-}
-
-/* ------------------ BLOG ------------------ */
-#blog .blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.blog-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: var(--transition);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-}
-
-.blog-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.blog-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: var(--transition);
-}
-
-.blog-card:hover img {
-  filter: brightness(0.8);
-}
-
-.blog-content {
+.project-content {
   padding: 20px;
 }
 
-.blog-content h3 {
+.project-content h3 {
   color: var(--primary);
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
 }
 
-.blog-content p {
-  font-size: 0.95rem;
+.project-content p {
+  margin-bottom: 15px;
   color: #444;
+  font-size: 1rem;
 }
 
-.read-more {
+.project-content a {
   display: inline-block;
-  margin-top: 10px;
-  padding: 8px 16px;
+  padding: 10px 20px;
   background: var(--primary);
   color: white;
   border-radius: 5px;
+  font-weight: bold;
   transition: var(--transition);
 }
 
-.read-more:hover {
-  background: var(--secondary);
+.project-content a:hover {
+  background: var(--accent);
+  color: #222;
 }
 
 /* ------------------ PRICING ------------------ */
@@ -380,156 +300,117 @@ footer a {
 
 <!-- HEADER -->
 <header>
-<nav>
-  <div class="logo">Gift Abuga</div>
-  <ul>
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-  </ul>
-</nav>
+  <nav>
+    <div class="logo">Gift Abuga</div>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+  </nav>
 </header>
 
 <!-- HERO -->
 <section id="hero">
-<div class="content">
-  <h1>Hi, I'm Gift Abuga</h1>
-  <p>Web Developer & Designer creating responsive, modern websites.</p>
-  <a href="#projects">View My Work</a>
-</div>
+  <div class="content">
+    <h1>Professional Web Development Services</h1>
+    <p>Creating stunning, responsive websites that grow your business.</p>
+    <div class="contact-buttons">
+      <a href="https://wa.me/254111971411?text=lets%20partner%20in%20a%20project." target="_blank">
+        📱 WhatsApp
+      </a>
+      <a href="tel:+254111971411">
+        📞 Call Me
+      </a>
+    </div>
+  </div>
 </section>
-
 <hr class="section-divider">
 
-<section id="testimonials">
-  <h2>Client Testimonials</h2>
-  <div class="testimonial-container">
-    <!-- TrippyGO Tours & Travel -->
-    <div class="testimonial-card">
-      <img src="https://via.placeholder.com/400x200.png?text=TrippyGO+Tours" alt="TrippyGO Tours & Travel">
-      <p class="testimonial-text">"Gift Abuga delivered a dynamic and user-friendly website that perfectly captures our brand's adventurous spirit."</p>
-      <p class="testimonial-name">TrippyGO Tours & Travel</p>
-      <a href="https://trippygotours.com/" target="_blank">View Project</a>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>My Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="https://trippygotours.com/wp-content/uploads/2023/03/homepage.jpg" alt="TrippyGO Tours">
+      <div class="project-content">
+        <h3>TrippyGO Tours & Travel</h3>
+        <p>A dynamic and user-friendly travel website showcasing tours and booking features.</p>
+        <a href="https://trippygotours.com/" target="_blank">View Project</a>
+      </div>
     </div>
 
-    <!-- Ritz Hospitality -->
-    <div class="testimonial-card">
-      <img src="https://via.placeholder.com/400x200.png?text=Ritz+Hospitality" alt="Ritz Hospitality">
-      <p class="testimonial-text">"The website created for us is elegant and functional, enhancing our online presence and client engagement."</p>
-      <p class="testimonial-name">Ritz Hospitality</p>
-      <a href="https://ritzhospitality.co.ke/" target="_blank">View Project</a>
+    <div class="project-card">
+      <img src="https://ritzhospitality.co.ke/wp-content/uploads/2023/03/homepage.jpg" alt="Ritz Hospitality">
+      <div class="project-content">
+        <h3>Ritz Hospitality</h3>
+        <p>An elegant hospitality website that improves client engagement and online presence.</p>
+        <a href="https://ritzhospitality.co.ke/" target="_blank">View Project</a>
+      </div>
     </div>
 
-    <!-- Iricon Group -->
-    <div class="testimonial-card">
-      <img src="https://via.placeholder.com/400x200.png?text=Iricon+Group" alt="Iricon Group">
-      <p class="testimonial-text">"Our new site reflects our professionalism and expertise, thanks to Gift Abuga's meticulous work."</p>
-      <p class="testimonial-name">Iricon Group</p>
-      <a href="https://iricongroup.co.ke/" target="_blank">View Project</a>
+    <div class="project-card">
+      <img src="https://iricongroup.co.ke/wp-content/uploads/2023/03/homepage.jpg" alt="Iricon Group">
+      <div class="project-content">
+        <h3>Iricon Group</h3>
+        <p>A professional website showcasing company services, portfolio, and client projects.</p>
+        <a href="https://iricongroup.co.ke/" target="_blank">View Project</a>
+      </div>
     </div>
   </div>
 </section>
-
-
-<hr class="section-divider">
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-<h2>What Clients Say</h2>
-<div class="testimonial-container">
-  <div class="testimonial-card">
-    <p class="testimonial-text">Gift delivered an outstanding website that boosted our sales by 30%!</p>
-    <p class="testimonial-name">– Sarah W.</p>
-  </div>
-  <div class="testimonial-card">
-    <p class="testimonial-text">Professional, responsive, and easy to work with. Highly recommend.</p>
-    <p class="testimonial-name">– James K.</p>
-  </div>
-  <div class="testimonial-card">
-    <p class="testimonial-text">The project was delivered on time with excellent results.</p>
-    <p class="testimonial-name">– Linda M.</p>
-  </div>
-</div>
-</section>
-
-<hr class="section-divider">
-
-<!-- BLOG -->
-<section id="blog">
-<h2>Latest Blog Posts</h2>
-<div class="blog-grid">
-  <div class="blog-card">
-    <img src="https://images.unsplash.com/photo-1581091012184-efb0f3b7b269?auto=format&fit=crop&w=800&q=80" alt="Blog 1">
-    <div class="blog-content">
-      <h3>Top Web Design Trends 2025</h3>
-      <p>Explore the latest design trends to keep your websites modern and engaging.</p>
-      <a class="read-more" href="#">Read More</a>
-    </div>
-  </div>
-  <div class="blog-card">
-    <img src="https://images.unsplash.com/photo-1581091215361-5c8b4221d6da?auto=format&fit=crop&w=800&q=80" alt="Blog 2">
-    <div class="blog-content">
-      <h3>Boost Your Site Performance</h3>
-      <p>Learn essential tips to optimize your website speed and SEO ranking.</p>
-      <a class="read-more" href="#">Read More</a>
-    </div>
-  </div>
-</div>
-</section>
-
 <hr class="section-divider">
 
 <!-- PRICING -->
 <section id="pricing">
-<h2>Pricing Plans</h2>
-<div class="pricing-container">
-  <div class="pricing-card">
-    <div class="plan-icon">💻</div>
-    <h3>Basic</h3>
-    <p class="price">$19</p>
-    <p>Landing page design</p>
-    <p>Responsive layout</p>
-    <p>Email support</p>
+  <h2>Pricing Plans</h2>
+  <div class="pricing-container">
+    <div class="pricing-card">
+      <div class="plan-icon">🖥️</div>
+      <h3>Basic</h3>
+      <div class="price">$19</div>
+      <p>Responsive website design</p>
+      <p>3 pages</p>
+      <p>Email support</p>
+    </div>
+    <div class="pricing-card highlight">
+      <div class="plan-icon">🚀</div>
+      <h3>Pro</h3>
+      <div class="price">$29</div>
+      <p>Responsive website + CMS</p>
+      <p>Up to 5 pages</p>
+      <p>Priority support</p>
+    </div>
+    <div class="pricing-card">
+      <div class="plan-icon">💼</div>
+      <h3>Premium</h3>
+      <div class="price">$49</div>
+      <p>Custom web development</p>
+      <p>Unlimited pages</p>
+      <p>Full support</p>
+    </div>
   </div>
-  <div class="pricing-card highlight">
-    <div class="plan-icon">🚀</div>
-    <h3>Pro</h3>
-    <p class="price">$29</p>
-    <p>Full website design</p>
-    <p>Responsive & SEO optimized</p>
-    <p>Priority support</p>
-  </div>
-  <div class="pricing-card">
-    <div class="plan-icon">🌐</div>
-    <h3>Enterprise</h3>
-    <p class="price">$49</p>
-    <p>Custom web applications</p>
-    <p>Advanced SEO & analytics</p>
-    <p>Dedicated support</p>
-  </div>
-</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-<p>&copy; 2025 Gift Abuga. Designed & Developed by Gift Abuga.</p>
-<p>Follow me on <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
+  &copy; 2025 Gift Abuga. 
+  <a href="https://wa.me/254111971411?text=lets%20partner%20in%20a%20project." target="_blank">WhatsApp Me</a> | 
+  <a href="tel:+254111971411">Call Me</a>
 </footer>
 
 <script>
-// Scroll reveal
-const sections = document.querySelectorAll("section");
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
+// Fade-in on scroll
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+  const triggerBottom = window.innerHeight * 0.85;
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if(sectionTop < triggerBottom) {
+      section.classList.add('show');
     }
   });
-}, {threshold: 0.1});
-
-sections.forEach(section => observer.observe(section));
+});
 </script>
 
 </body>
